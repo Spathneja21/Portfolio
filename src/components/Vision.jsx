@@ -6,7 +6,7 @@ const Vision = () => {
         <section id="vision" className="section vision">
             <div className="container vision-container">
                 <div className="vision-content">
-                    <h2>My <span className="script-text">V</span>ision_</h2>
+                    <h2>MY <span className="script-text">V </span><span className="script-text2">iSION_</span></h2>
                     <p className="vision-text">
                         I strive to bridge the gap between functional code and emotive design.
                         My goal is to create digital experiences that not only solve problems but also inspire and delight users.

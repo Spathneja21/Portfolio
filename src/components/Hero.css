@@ -16,7 +16,7 @@
 .hero-content p {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 500px;
 }
 

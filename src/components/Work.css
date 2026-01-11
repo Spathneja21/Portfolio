@@ -209,6 +209,20 @@
     padding: 0.6rem;
 }
 
+.work-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    padding-left: 2.5rem;
+    font-weight: 500;
+}
+
+.work-container h2 .work-text {
+    color: var(--text-primary);
+    font-family: var(--font-script);
+    font-size: 5.5rem;
+    padding-right: 0.5rem;
+}
+
 .work-info h4 {
     margin-top: 0.2rem;
     margin-bottom: -0.4rem;

@@ -16,6 +16,11 @@
     flex: 1;
     z-index: 2;
 }
+.vision-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
 
 .vision-text {
     font-size: 1.2rem;

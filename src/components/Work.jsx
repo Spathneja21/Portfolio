@@ -37,8 +37,8 @@ const Work = () => {
 
     return (
         <section id="work" className="section work">
-            <div className="container">
-                <h2>Work_</h2>
+            <div className="work-container">
+                <h2>MY <span className="work-text">W</span>ork_</h2>
 
                 <div className="work-categories">
                     <button className={`category-btn ${activeCategory === 'ai' ? 'active' : ''}`} onClick={() => setActiveCategory('ai')}>AI Development</button>
