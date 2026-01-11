@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Premium Monochrome Palette */
+  --bg-primary: #050505;
+  /* Very dark black */
+  --bg-secondary: #0a0a0a;
+  /* Slightly lighter black */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  /* Grey */
+  --accent-primary: #ffffff;
+  /* White accent */
+  --accent-secondary: #cccccc;
+  /* Light grey accent */
+  --accent-gradient: linear-gradient(to right, #ffffff, #888888);
+  /* White to Grey gradient */
+
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --navbar-bg: rgba(5, 5, 5, 0.9);
+
+  /* Typography */
+  --font-main: 'Manrope', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+  /* Uppercase Sans */
+  --font-script: 'Luxurious Script', cursive;
+  /* Script */
+}
+
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --text-primary: #000000;
+  --text-secondary: #555555;
+  --accent-primary: #000000;
+  --accent-secondary: #333333;
+  --accent-gradient: linear-gradient(to right, #000000, #555555);
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  /* Larger for impact */
+  font-weight: 500;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add a script accent to h2 underline or pseudo element if desired, or just use script class */
+.script-text {
+  font-family: var(--font-script);
+  text-transform: none;
+  font-size: 2.5em;
+  color: var(--text-primary);
+  letter-spacing: normal;
+  font-weight: 200;
+}
+
+.luxurious-char {
+  font-family: var(--font-script);
+  font-weight: 200;
+  font-size: 2em;
+  /* Significantly bigger */
+  line-height: 0.8;
+  /* Adjust to sit well with other text */
+  vertical-align: bottom;
+  text-transform: none;
+  margin-right: 0.3rem;
+}
+
+/* Override default uppercase for mixed typography check */
+h1 {
+  text-transform: capitalize;
+  /* Or none, depending on preference. "Creative Developer" looks like Title Case. */
+}
+
+/* h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100px;
+  height: 2px;
+  background: var(--text-primary);
+  /* Minimalist underline 
+  border-radius: 0;
+  /* Sharp edges 
+} */
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 0;
+  /* Square edges for premium feel */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

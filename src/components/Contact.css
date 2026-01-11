@@ -1,0 +1,128 @@
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+}
+
+.section.contact {
+    min-height: auto;
+    padding-bottom: 2rem;
+}
+
+.contact p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.contact-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    position: relative;
+    height: 60px;
+    /* Fix height to prevent jumping */
+}
+
+.contact-btn {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 180px;
+    /* Default width for 'Get In Touch' */
+    height: 50px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.contact-btn.active {
+    min-width: 50px;
+    /* Circle width */
+    width: 50px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border-color: var(--text-primary);
+}
+
+.btn-text {
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.contact-btn.active .btn-text {
+    opacity: 0;
+    width: 0;
+    display: none;
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+    position: absolute;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.4s ease;
+}
+
+.contact-btn.active .btn-icon {
+    opacity: 1;
+    transform: rotate(45deg);
+    /* Make it a cross */
+    position: relative;
+}
+
+
+/* Social Links Animation */
+.social-links {
+    display: flex;
+    gap: 3rem;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
+}
+
+.social-links.left {
+    transform: translateX(100px) scale(0.5);
+    margin-right: -100px;
+    /* Pull in to hide behind button area roughly */
+}
+
+.social-links.right {
+    transform: translateX(-100px) scale(0.5);
+    margin-left: -100px;
+}
+
+.social-links.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    /* Circle links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    transform: translateY(-3px);
+    background: var(--glass-bg);
+}
+
+.social-links a::after {
+    display: none;
+}
