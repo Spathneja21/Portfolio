@@ -130,6 +130,8 @@
     border: 1px solid var(--glass-border);
     break-inside: avoid;
     margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
 }
 
