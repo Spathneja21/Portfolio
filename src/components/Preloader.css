@@ -27,7 +27,7 @@
     -webkit-text-fill-color: transparent;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--font-heading);
 }
 
 .loading-bar-container {
