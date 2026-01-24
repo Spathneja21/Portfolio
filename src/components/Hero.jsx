@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import profilePic from '../assets/shubham.png';
 
 const Hero = () => {
     const handleScroll = (e, targetId) => {
@@ -23,6 +24,9 @@ const Hero = () => {
                         <a href="#work" className="btn" onClick={(e) => handleScroll(e, 'work')}>View Work</a>
                         <a href="#contact" className="btn btn-outline" onClick={(e) => handleScroll(e, 'contact')}>Contact Me</a>
                     </div>
+                </div>
+                <div className="hero-image-container">
+                    <img src={profilePic} alt="Profile" className="hero-profile-pic" />
                 </div>
             </div>
         </section>

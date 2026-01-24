@@ -106,7 +106,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
     if (navItems) {
       gsap.set(navItems, { width: 0, overflow: 'hidden' });
-      gsap.to(navItems, { width: 'auto', duration: 0.6, ease });
+      gsap.to(navItems, { width: 'auto', duration: 0.4, ease });
     }
 
     return () => window.removeEventListener('resize', onResize);
