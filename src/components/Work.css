@@ -266,3 +266,32 @@
     color: var(--bg-primary);
     border-color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+    .work-container h2 {
+        font-size: 2rem;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .work-container h2 .work-text {
+        font-size: 3.5rem;
+        display: inline-block;
+        line-height: 1;
+        padding-right: 0;
+        white-space: nowrap;
+    }
+
+    .work-categories {
+        gap: 1rem;
+    }
+
+    .category-btn {
+        font-size: 1rem;
+    }
+
+    .work-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

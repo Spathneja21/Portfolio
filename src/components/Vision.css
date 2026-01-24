@@ -1,5 +1,5 @@
 .vision {
-    background-color: var(--bg-primary);
+    background-color: transparent;
     /* Blend seamlessly or alter slightly if needed */
     position: relative;
     overflow: hidden;
@@ -7,56 +7,53 @@
 
 .vision-container {
     display: flex;
-    align-items: left;
-    justify-content: space-between;
-    gap: 15rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 .vision-content {
     flex: 1;
     z-index: 2;
 }
+
 .vision-content h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-weight: 500;
+    white-space: nowrap;
+    /* Prevent title breaking */
 }
 
 .vision-text {
     font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.8;
-    max-width: 600px;
-    margin-top: -2.5rem;
+    max-width: 800px;
+    /* Increased max-width since image is gone */
+    margin: 0 auto;
 }
 
-.vision-decorative {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.vision-circle {
-    width: 300px;
-    height: 300px;
-    border: 1px solid var(--text-secondary);
-    border-radius: 50%;
-    opacity: 0.2;
-    transition: transform 1s ease;
-}
-
-.vision:hover .vision-circle {
-    transform: scale(1.1) rotate(45deg);
-}
+/* Decorative styles removed */
 
 @media (max-width: 768px) {
     .vision-container {
         flex-direction: column;
         text-align: center;
+        gap: 4rem;
     }
 
     .vision-content {
         margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision-content h2 {
+        white-space: nowrap;
+        font-size: clamp(2rem, 8vw, 2.5rem);
     }
 }

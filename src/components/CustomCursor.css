@@ -1,0 +1,25 @@
+.custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: width 0.3s ease, height 0.3s ease;
+    will-change: transform;
+}
+
+.custom-cursor.hovering {
+    width: 60px;
+    height: 60px;
+}
+
+/* Hide on mobile */
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
+}

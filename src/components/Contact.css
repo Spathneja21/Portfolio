@@ -85,12 +85,55 @@
 .social-links.left {
     transform: translateX(100px) scale(0.5);
     margin-right: -100px;
-    /* Pull in to hide behind button area roughly */
 }
 
 .social-links.right {
     transform: translateX(-100px) scale(0.5);
     margin-left: -100px;
+}
+
+@media (max-width: 768px) {
+    .contact-actions {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+    }
+
+    .social-links {
+        position: relative;
+        transform: none !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+        /* Always show links on mobile if prefer, or keep interaction */
+        display: none;
+        /* Hide initially */
+    }
+
+    .social-links.active {
+        display: flex;
+        opacity: 1 !important;
+    }
+
+    .social-links.left {
+        transform: translateY(20px);
+        margin-right: 0;
+        margin-bottom: -20px;
+        flex-direction: row;
+    }
+
+    .social-links.right {
+        transform: translateY(-20px);
+        margin-left: 0;
+        margin-top: -20px;
+        flex-direction: row;
+    }
+
+    .social-links.left.active,
+    .social-links.right.active {
+        transform: translateY(0);
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 }
 
 .social-links.active {

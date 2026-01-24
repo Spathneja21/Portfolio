@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
+import CustomCursor from './components/CustomCursor';
 import './App.css';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           </footer>
         </>
       )}
+      <CustomCursor />
     </div>
   );
 }

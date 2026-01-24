@@ -4,6 +4,7 @@ import './Navbar.css';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   const circleRefs = useRef([]);
@@ -143,11 +144,22 @@ const Navbar = ({ theme, toggleTheme }) => {
             className="pill-logo"
             aria-label="Home"
             ref={logoRef}
+            onClick={() => setMobileOpen(false)}
           >
             <span className="logo-text">Shubham</span>
           </a>
 
-          <div className="pill-nav-items" ref={navItemsRef}>
+          <button
+            className={`mobile-toggle ${mobileOpen ? 'open' : ''}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className={`pill-nav-items ${mobileOpen ? 'open' : ''}`} ref={navItemsRef}>
             <ul className="pill-list" role="menubar">
               {navItems.map((item, i) => (
                 <li key={item.href} role="none">
@@ -156,6 +168,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     href={item.href}
                     className={`pill${activeSection === item.href.substring(1) ? ' is-active' : ''}`}
                     aria-label={item.label}
+                    onClick={() => setMobileOpen(false)}
                     onMouseEnter={() => handleEnter(i)}
                     onMouseLeave={() => handleLeave(i)}
                   >
@@ -176,7 +189,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li role="none">
                 <button
                   className="theme-toggle-pill"
-                  onClick={toggleTheme}
+                  onClick={() => { toggleTheme(); setMobileOpen(false); }}
                   aria-label="Toggle Theme"
                 >
                   {theme === 'dark' ? '☀️' : '🌙'}

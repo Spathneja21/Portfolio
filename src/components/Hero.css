@@ -96,6 +96,10 @@
     animation: imageFadeIn 0.8s ease-out forwards;
 }
 
+[data-theme="light"] .hero-profile-pic {
+    filter: grayscale(100%) contrast(1.0) brightness(1.1);
+}
+
 /* .hero-profile-pic:hover {
     filter: grayscale(0%) contrast(1);
     transform: scale(1.02);
@@ -103,7 +107,7 @@
 
 @media (max-width: 768px) {
     .hero-image-container {
-        margin-top: 2rem;
+        display: none;
     }
 
     .hero-profile-pic {
