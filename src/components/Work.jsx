@@ -62,7 +62,7 @@ To conclude the lifecycle, I deployed the optimal regression model into a Stream
 
     return (
         <section id="work" className="section work">
-            <div className="work-container">
+            <div className="container work-container">
                 <h2>MY <span className="work-text">W</span>ork_</h2>
 
                 <div className="work-categories">
