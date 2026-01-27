@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLenis } from 'lenis/react';
 import './Work.css';
 
 const Work = () => {
+    const lenis = useLenis();
     const [activeCategory, setActiveCategory] = useState('ai');
     const [activeSubCategory, setActiveSubCategory] = useState('all');
 
@@ -44,6 +46,15 @@ To conclude the lifecycle, I deployed the optimal regression model into a Stream
     });
 
     const [selectedProject, setSelectedProject] = useState(null);
+
+    useEffect(() => {
+        if (!lenis) return;
+        if (selectedProject) {
+            lenis.stop();
+        } else {
+            lenis.start();
+        }
+    }, [selectedProject, lenis]);
 
     const handleWorkClick = (work) => {
         setSelectedProject(work);
@@ -103,13 +114,13 @@ To conclude the lifecycle, I deployed the optimal regression model into a Stream
                         <div className="project-modal" onClick={(e) => e.stopPropagation()}>
                             <button className="lightbox-close" onClick={() => setSelectedProject(null)}>&times;</button>
 
-                            <div className="project-modal-content">
+                            <div className="project-modal-content" data-lenis-prevent>
                                 {selectedProject.src && (
                                     <div className="project-modal-image">
                                         <img src={encodeURI(selectedProject.src)} alt={selectedProject.title} />
                                     </div>
                                 )}
-                                <div className="project-modal-details">
+                                <div className="project-modal-details" data-lenis-prevent>
                                     <h3>{selectedProject.title}</h3>
                                     <div className="project-description">
                                         {selectedProject.description.split('\n').map((line, i) => (

@@ -1,13 +1,21 @@
 import React from 'react';
+import { useLenis } from 'lenis/react';
 import './Hero.css';
 import profilePic from '../assets/shubham.png';
 
 const Hero = () => {
+    const lenis = useLenis();
+
     const handleScroll = (e, targetId) => {
         e.preventDefault();
-        const element = document.getElementById(targetId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+        if (lenis) {
+            lenis.scrollTo(`#${targetId}`);
+        } else {
+            // Fallback if Lenis isn't ready
+            const element = document.getElementById(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 

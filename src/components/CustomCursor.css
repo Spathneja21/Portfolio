@@ -5,7 +5,7 @@
     border-radius: 50%;
     background-color: white;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 20000;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
     transition: width 0.3s ease, height 0.3s ease;

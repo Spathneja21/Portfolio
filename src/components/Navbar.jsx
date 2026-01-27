@@ -1,11 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useLenis } from 'lenis/react';
 import './Navbar.css';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
+  const lenis = useLenis();
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileOpen(false);
+
+    // Extract target ID
+    const targetId = href.replace('#', '');
+
+    if (lenis) {
+      lenis.scrollTo(href);
+    } else {
+      // Fallback
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
 
   const circleRefs = useRef([]);
   const tlRefs = useRef([]);
@@ -144,7 +167,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             className="pill-logo"
             aria-label="Home"
             ref={logoRef}
-            onClick={() => setMobileOpen(false)}
+            onClick={(e) => handleNavClick(e, '#home')}
           >
             <span className="logo-text">Shubham</span>
           </a>
@@ -168,7 +191,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     href={item.href}
                     className={`pill${activeSection === item.href.substring(1) ? ' is-active' : ''}`}
                     aria-label={item.label}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     onMouseEnter={() => handleEnter(i)}
                     onMouseLeave={() => handleLeave(i)}
                   >
