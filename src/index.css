@@ -15,7 +15,7 @@
   /* Light grey accent */
   --accent-gradient: linear-gradient(to right, #ffffff, #888888);
   /* White to Grey gradient */
-  --bg-gradient: linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 50%, #000000 100%);
+  --bg-gradient: linear-gradient(135deg, #2a2a2a 0%, #000000 50%, #010100 100%);
 
   --glass-bg: rgba(20, 20, 20, 0.6);
   --glass-border: rgba(255, 255, 255, 0.15);
@@ -121,11 +121,13 @@ img {
 }
 
 .section {
-  padding: 1rem 0;
-  min-height: 100vh;
+  padding: 3rem 0;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  /* Useful for contained positioning */
 }
 
 h1,
@@ -139,7 +141,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
   /* Responsive font sizing */
   font-weight: 500;
   background: var(--accent-gradient);

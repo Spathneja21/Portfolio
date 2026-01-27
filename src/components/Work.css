@@ -214,15 +214,20 @@
 .work-container h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    padding-left: 2.5rem;
+    text-align: center;
     font-weight: 500;
+    padding-left: 0;
+    display: block;
+    width: 100%;
 }
 
 .work-container h2 .work-text {
     color: var(--text-primary);
     font-family: var(--font-script);
-    font-size: 5.5rem;
-    padding-right: 0.5rem;
+    font-size: 2.5em;
+    /* Match script-text size relative to h2 */
+    padding-right: 0;
+    line-height: 0.8;
 }
 
 .work-info h4 {
@@ -269,13 +274,11 @@
 
 @media (max-width: 768px) {
     .work-container h2 {
-        font-size: 2rem;
         padding-left: 0;
         text-align: center;
     }
 
     .work-container h2 .work-text {
-        font-size: 3.5rem;
         display: inline-block;
         line-height: 1;
         padding-right: 0;
@@ -293,5 +296,145 @@
     .work-item {
         margin-left: 0;
         margin-right: 0;
+    }
+}
+
+/* Project Modal Styling */
+.project-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.project-modal-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.project-modal-image {
+    flex: 1;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.project-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.project-modal-details {
+    flex: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-modal-details h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.project-description {
+    margin-bottom: 2rem;
+}
+
+.project-description p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.project-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+.btn-modal-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    border: 1px solid var(--text-primary);
+}
+
+.btn-modal-link:hover {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 900px) {
+    .project-modal-content {
+        flex-direction: column;
+    }
+
+    .project-modal-image {
+        flex: none;
+        height: 250px;
+        width: 100%;
+    }
+
+    .project-modal-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-modal-details {
+        padding: 1.5rem;
+    }
+
+    .project-modal-details h3 {
+        font-size: 1.5rem;
     }
 }

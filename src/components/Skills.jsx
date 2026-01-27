@@ -5,7 +5,7 @@ const Skills = () => {
     return (
         <section id="skills" className="section skills">
             <div className="container">
-                <h2>Skills & <span className="script-text">E</span>xpertise_</h2>
+                <h2>MY Skills & <span className="script-text">E</span>xpertise_</h2>
                 <div className="skills-grid">
                     <div className="skill-card">
                         <h3>AI Development</h3>

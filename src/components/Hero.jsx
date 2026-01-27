@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1>
-                        <span className="luxurious-char">C</span><span>REATIVE DEVELOPER</span> <span className="ampersand">&</span> <br />
+                        <span className="luxurious-char">C</span><span>REATIVE DEVELOPER &</span>  <br />
                         <span className="luxurious-char">V</span><span>IS!ONARY DESiGNER</span>
                     </h1>
                     <p>Building digital experiences that blend aesthetic beauty with technical precision.</p>

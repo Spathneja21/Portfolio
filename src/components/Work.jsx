@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Work.css';
 
 const Work = () => {
-    const [activeCategory, setActiveCategory] = useState('graphic');
+    const [activeCategory, setActiveCategory] = useState('ai');
     const [activeSubCategory, setActiveSubCategory] = useState('all');
 
     const works = [
@@ -16,8 +16,24 @@ const Work = () => {
         { id: 6, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (3).png', title: 'Artboard V3', description: 'Grid Layout', link: 'https://www.instagram.com/p/DQpGVqEEjMk/?igsh=MTBhY2lvOGVsazNqbA==' },
         { id: 7, category: 'graphic', subcategory: 'grids', src: '/elements/grids/RECRUITMENT grid full-01.png', title: 'Recruitment Grid', description: 'Grid Layout', link: 'https://www.instagram.com/p/DN-5UFlkpBo/?igsh=MWRwMHl5Yzk0cXN5OA==' },
         { id: 8, category: 'graphic', subcategory: 'grids', src: '/elements/grids/eyes behind the camera.png', title: 'Eyes Behind Camera', description: 'Grid Layout', link: '#' },
+
+        // AI Development
+        {
+            id: 9,
+            category: 'ai',
+            title: 'Diamond Price Predictor',
+            shortDesc: 'End-to-end ML pipeline with 98% accuracy.',
+            description: `Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
+            
+After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
+
+To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
+            tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
+            src: '/elements/ai/diamond.png',
+            link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
+        },
+
         // Placeholders for other categories
-        { id: 9, category: 'ai', title: 'AI Project Placeholder', description: 'Coming Soon' },
         { id: 10, category: 'software', title: 'Software Project Placeholder', description: 'Coming Soon' },
     ];
 
@@ -27,12 +43,10 @@ const Work = () => {
         return true;
     });
 
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const handleWorkClick = (work) => {
-        if (work.src) {
-            setSelectedImage(work.src);
-        }
+        setSelectedProject(work);
     };
 
     return (
@@ -71,12 +85,9 @@ const Work = () => {
                                 <div className="work-info">
                                     <h4>{work.title}</h4>
                                     <div className="work-meta">
-                                        <p>{work.description}</p>
-                                        {work.link && work.link !== '#' && (
-                                            <a href={work.link} target="_blank" rel="noopener noreferrer" className="work-link-icon" onClick={(e) => e.stopPropagation()} title="View Project">
-                                                ↗
-                                            </a>
-                                        )}
+                                        <p>{work.shortDesc || work.description}</p>
+                                        {/* Keep arrow for aesthetic, but card click opens modal mainly */}
+                                        <span className="work-link-icon">↗</span>
                                     </div>
                                 </div>
                             </div>
@@ -86,12 +97,41 @@ const Work = () => {
                     )}
                 </div>
 
-                {/* Lightbox Modal */}
-                {selectedImage && (
-                    <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
-                        <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="lightbox-close" onClick={() => setSelectedImage(null)}>&times;</button>
-                            <img src={encodeURI(selectedImage)} alt="Full Preview" className="lightbox-image" />
+                {/* Project Detail Modal */}
+                {selectedProject && (
+                    <div className="lightbox-overlay" onClick={() => setSelectedProject(null)}>
+                        <div className="project-modal" onClick={(e) => e.stopPropagation()}>
+                            <button className="lightbox-close" onClick={() => setSelectedProject(null)}>&times;</button>
+
+                            <div className="project-modal-content">
+                                {selectedProject.src && (
+                                    <div className="project-modal-image">
+                                        <img src={encodeURI(selectedProject.src)} alt={selectedProject.title} />
+                                    </div>
+                                )}
+                                <div className="project-modal-details">
+                                    <h3>{selectedProject.title}</h3>
+                                    <div className="project-description">
+                                        {selectedProject.description.split('\n').map((line, i) => (
+                                            line.trim() && <p key={i}>{line}</p>
+                                        ))}
+                                    </div>
+
+                                    {selectedProject.tags && (
+                                        <div className="project-tags">
+                                            {selectedProject.tags.map((tag, index) => (
+                                                <span key={index} className="project-tag">{tag}</span>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {selectedProject.link && selectedProject.link !== '#' && (
+                                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn-modal-link">
+                                            View Project <span style={{ marginLeft: '5px' }}>↗</span>
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )}

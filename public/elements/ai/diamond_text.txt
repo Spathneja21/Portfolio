@@ -1,0 +1,7 @@
+Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
+After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks. 
+
+To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry. Highlights for your "Skills" section:To maximize your profile's searchability, you might also want to add these specific tags to the project:
+Models: XGBoost, Random Forest, MLP (Neural Networks), SVM, KNN. 
+Tools: Python, Streamlit, Scikit-Learn, Pandas.
+Metrics: Regression (R2, RMSE), Classification (Accuracy, Bayes’ Theorem).
