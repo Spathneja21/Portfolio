@@ -37,7 +37,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   const navItemsRef = useRef(null);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#home' },
     { label: 'Vision', href: '#vision' },
     { label: 'Skills', href: '#skills' },
     { label: 'Work', href: '#work' },
@@ -169,7 +169,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             ref={logoRef}
             onClick={(e) => handleNavClick(e, '#home')}
           >
-            <span className="logo-text">Shubham</span>
+            <span className="logo-text">@shubhampathneja</span>
           </a>
 
           <button

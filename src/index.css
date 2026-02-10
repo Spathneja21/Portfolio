@@ -15,7 +15,7 @@
   /* Light grey accent */
   --accent-gradient: linear-gradient(to right, #ffffff, #888888);
   /* White to Grey gradient */
-  --bg-gradient: linear-gradient(135deg, #2a2a2a 0%, #000000 50%, #010100 100%);
+  --bg-gradient: linear-gradient(135deg, #131111 0%, #000000 50%, #010100 100%);
 
   --glass-bg: rgba(20, 20, 20, 0.6);
   --glass-border: rgba(255, 255, 255, 0.15);

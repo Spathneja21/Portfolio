@@ -15,6 +15,43 @@
     align-items: center;
 }
 
+.hero-introduction {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.hero-hello {
+    font-size: 4rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.hero-name-intro {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1;
+    font-weight: 400;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: var(--text-primary);
+}
+
+.hero-name-intro .luxurious-char {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.hero-i-am {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
 .hero-content p {
     font-size: 1.2rem;
     color: var(--text-secondary);
@@ -67,6 +104,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+
+    .hero-introduction {
+        align-items: center;
     }
 
     .hero-visual {
@@ -82,7 +124,7 @@
 }
 
 .hero-profile-pic {
-    width: 400px;
+    width: 450px;
     height: auto;
     /* object-fit: contain; */
     filter: grayscale(100%) contrast(1.2);
@@ -90,7 +132,6 @@
     /* Optional mask for a smooth fade at bottom if relevant, else remove */
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-
     /* Fade In Animation */
     opacity: 0;
     animation: imageFadeIn 0.8s ease-out forwards;
