@@ -23,9 +23,10 @@
 }
 
 .hero-hello {
-    font-size: 4rem;
+    font-size: 5rem;
     color: var(--text-secondary);
     font-weight: 300;
+    margin-bottom: -1rem;
 }
 
 .hero-name-intro {
@@ -50,6 +51,7 @@
     color: var(--text-secondary);
     font-weight: 300;
     margin-top: 0.5rem;
+    margin-bottom: -1rem;
 }
 
 .hero-content p {
@@ -124,7 +126,7 @@
 }
 
 .hero-profile-pic {
-    width: 450px;
+    width: 500px;
     height: auto;
     /* object-fit: contain; */
     filter: grayscale(100%) contrast(1.2);

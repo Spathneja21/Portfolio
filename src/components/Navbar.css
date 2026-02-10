@@ -45,10 +45,10 @@
 
 .logo-text {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     font-family: var(--font-heading);
     /* text-transform: uppercase; */
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     background-clip: text;

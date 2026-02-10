@@ -9,19 +9,89 @@ const Work = () => {
 
     const works = [
         // Graphic Design - Posters
-        { id: 1, category: 'graphic', subcategory: 'posters', src: '/elements/posters/marshM.png', title: 'MarshM', description: 'Poster Design', link: 'https://www.instagram.com/p/DLP_ebBBbKF/?igsh=MWN1ajBjOW9iempwMA==' },
-        { id: 2, category: 'graphic', subcategory: 'posters', src: '/elements/posters/simar-01.png', title: 'Simar 01', description: 'Poster Design', link: 'https://www.instagram.com/p/DLSmZVNtky2/?igsh=ZDYzODU3a2o1dTh0' },
-        { id: 3, category: 'graphic', subcategory: 'posters', src: '/elements/posters/simar-02.png', title: 'Simar 02', description: 'Poster Design', link: 'https://www.instagram.com/p/DLSmFBoNQNP/?igsh=MXU2dXdxcmtnY216YQ==' },
-        { id: 4, category: 'graphic', subcategory: 'posters', src: '/elements/posters/simar-03.png', title: 'Simar 03', description: 'Poster Design', link: 'https://www.instagram.com/p/DLSl0cNNb0z/?igsh=Zmtrc2pmZGFrdWtv' },
+        { id: 1, category: 'graphic', src: '/elements/posters/marshM.png', title: 'MarshM' },
+        { id: 2, category: 'graphic', src: '/elements/posters/simar-01.png', title: 'Simar 01' },
+        { id: 3, category: 'graphic', src: '/elements/posters/simar-02.png', title: 'Simar 02' },
+        { id: 4, category: 'graphic', src: '/elements/posters/simar-03.png', title: 'Simar 03' },
         // Graphic Design - Grids
-        { id: 5, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (2).png', title: 'Artboard V2', description: 'Grid Layout', link: 'https://www.instagram.com/p/DQt0aBoEg1B/?igsh=MW80czdsNjR3dnFzdg==' },
-        { id: 6, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (3).png', title: 'Eyes behind the Camera', description: 'Social Media Grid', link: 'https://www.instagram.com/p/DQpGVqEEjMk/?igsh=MTBhY2lvOGVsazNqbA==' },
-        { id: 7, category: 'graphic', subcategory: 'grids', src: '/elements/grids/RECRUITMENT grid full-01.png', title: 'Recruitment Grid', description: 'Grid Layout', link: 'https://www.instagram.com/p/DN-5UFlkpBo/?igsh=MWRwMHl5Yzk0cXN5OA==' },
-        { id: 8, category: 'graphic', subcategory: 'grids', src: '/elements/grids/eyes behind the camera.png', title: 'Eyes Behind Camera', description: 'Grid Layout', link: '#' },
+        { id: 5, category: 'graphic', src: '/elements/grids/Artboard 1 (2).png', title: 'Artboard V2' },
+        { id: 6, category: 'graphic', src: '/elements/grids/Artboard 1 (3).png', title: 'Eyes behind the Camera' },
+        { id: 7, category: 'graphic', src: '/elements/grids/RECRUITMENT grid full-01.png', title: 'Recruitment Grid' },
+        { id: 8, category: 'graphic', src: '/elements/grids/eyes behind the camera.png', title: 'Eyes Behind Camera' },
+        { 
+            id: 9, category: 'graphic', 
+            src: '/elements/designs/Album cover 2.jpg',
+            link: '#' 
+        },
+        { 
+            id: 10, category: 'graphic', 
+            src: '/elements/designs/baatcheet.png',
+            link: '#' 
+        },
+        { 
+            id: 11, category: 'graphic', 
+            src: '/elements/designs/baatein.png',
+            link: '#' 
+        },
+        { 
+            id: 12, category: 'graphic', 
+            src: '/elements/designs/doors.png',
+            link: '#' 
+        },
+        { 
+            id: 13, category: 'graphic', 
+            src: '/elements/designs/enrique iglesias.png',
+            link: '#' 
+        },
+        { 
+            id: 14, category: 'graphic', 
+            src: '/elements/designs/front page.png',
+            link: '#' 
+        },
+        { 
+            id: 15, category: 'graphic', 
+            src: '/elements/designs/Main grid-16.png',
+            link: '#' 
+        },
+        { 
+            id: 16, category: 'graphic', 
+            src: '/elements/designs/MELANIE.png',
+            link: '#' 
+        },
+        { 
+            id: 17, category: 'graphic', 
+            src: '/elements/designs/poster2-01.png',
+            link: '#' 
+        },
+        { 
+            id: 18, category: 'graphic', 
+            src: '/elements/designs/SIMAR 2.png',
+            link: '#' 
+        },
+        { 
+            id: 19, category: 'graphic', 
+            src: '/elements/designs/SMILE.png',
+            link: '#' 
+        },
+        { 
+            id: 20, category: 'graphic', 
+            src: '/elements/designs/squirral love design.png',
+            link: '#' 
+        },
+        { 
+            id: 21, category: 'graphic', 
+            src: '/elements/designs/VOGUE.png',
+            link: '#' 
+        },
+        { 
+            id: 22, category: 'graphic', 
+            src: '/elements/designs/website is live-01.png',
+            link: '#' 
+        },
 
         // AI Development
         {
-            id: 9,
+            id: 23,
             category: 'ai',
             title: 'Diamond Price Predictor',
             shortDesc: 'End-to-end ML pipeline with 98% accuracy.',
@@ -34,7 +104,7 @@ const Work = () => {
         },
 
         {
-            id: 10,
+            id: 24,
             category: 'ai',
             title: 'S.A.A.R.T.H.I. AI',
             shortDesc: 'Coming Soon',
@@ -47,7 +117,7 @@ const Work = () => {
         },
 
         {
-            id: 11,
+            id: 25,
             category: 'ai',
             title: 'Safe-Sight',
             shortDesc: 'Coming Soon',
@@ -92,19 +162,51 @@ const Work = () => {
                     {/* <button className={`category-btn ${activeCategory === 'software' ? 'active' : ''}`} onClick={() => setActiveCategory('software')}>Software Development</button> */}
                 </div>
 
-                {activeCategory === 'graphic' && (
+                <div className="work-journey animate-grid">
+                    {activeCategory === 'ai' && (
+                        <div className="journey-content">
+                            <h3>Dev Odyssey</h3>
+                            <p>
+                                My journey into the world of development began with a curiosity for how things work under the hood.
+                                Starting with simple scripts, I quickly fell in love with the logic and creativity required to build robust applications.
+                                Over time, I've honed my skills in <strong>AI, Machine Learning, and Full-Stack Development</strong>, aiming to create intelligent systems that solve real-world problems.
+                                <br /><br />
+                                <em>(Here are some of my projects. Have a look!)</em>
+                            </p>
+                        </div>
+                    )}
+                    {activeCategory === 'graphic' && (
+                        <div className="journey-content">
+                            <h3>Design Philosophy</h3>
+                            <p>
+                                Design is where my technical side meets my creative soul. <strong><i>ART</i></strong> is my escape.
+                                I believe in <strong>minimalism with a purpose</strong>. My goal is to craft visual experiences that are not only aesthetically pleasing but also communicate a clear message and evoke the right emotions.
+                                <br />I like trying different <i>styles</i>.<br />
+                                I make grids, posters, graphic artworks, logos and more......
+                                <em>Here is some of my work. Have a look!</em>
+                            </p>
+                        </div>
+                    )}
+                </div>
+
+                {/* {activeCategory === 'graphic' && (
                     <div className="work-subcategories">
                         <button className={`filter-btn ${activeSubCategory === 'all' ? 'active' : ''}`} onClick={() => setActiveSubCategory('all')}>All</button>
                         <button className={`filter-btn ${activeSubCategory === 'logos' ? 'active' : ''}`} onClick={() => setActiveSubCategory('logos')}>Logos</button>
                         <button className={`filter-btn ${activeSubCategory === 'posters' ? 'active' : ''}`} onClick={() => setActiveSubCategory('posters')}>Posters</button>
                         <button className={`filter-btn ${activeSubCategory === 'grids' ? 'active' : ''}`} onClick={() => setActiveSubCategory('grids')}>Grids</button>
                     </div>
-                )}
+                )} */}
 
                 <div className="work-grid animate-grid" key={`${activeCategory}-${activeSubCategory}`}>
                     {filteredWorks.length > 0 ? (
                         filteredWorks.map((work) => (
-                            <div key={work.id} className="work-item" onClick={() => handleWorkClick(work)}>
+                            <div
+                                key={work.id}
+                                className={`work-item ${activeCategory === 'graphic' ? 'design-item' : ''}`}
+                                onClick={activeCategory !== 'graphic' ? () => handleWorkClick(work) : undefined}
+                                style={{ cursor: activeCategory === 'graphic' ? 'default' : 'none' }}
+                            >
                                 <div className="work-image-container">
                                     {work.src ? (
                                         <img src={encodeURI(work.src)} alt={work.title} loading="lazy" />
@@ -114,14 +216,16 @@ const Work = () => {
                                         </div>
                                     )}
                                 </div>
-                                <div className="work-info">
-                                    <h4>{work.title}</h4>
-                                    <div className="work-meta">
-                                        <p>{work.shortDesc || work.description}</p>
-                                        {/* Keep arrow for aesthetic, but card click opens modal mainly */}
-                                        <span className="work-link-icon">↗</span>
+                                {activeCategory !== 'graphic' && (
+                                    <div className="work-info">
+                                        <h4>{work.title}</h4>
+                                        <div className="work-meta">
+                                            <p>{work.shortDesc || work.description}</p>
+                                            {/* Keep arrow for aesthetic, but card click opens modal mainly */}
+                                            <span className="work-link-icon">↗</span>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         ))
                     ) : (
