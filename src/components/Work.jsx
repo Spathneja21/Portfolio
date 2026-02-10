@@ -15,7 +15,7 @@ const Work = () => {
         { id: 4, category: 'graphic', subcategory: 'posters', src: '/elements/posters/simar-03.png', title: 'Simar 03', description: 'Poster Design', link: 'https://www.instagram.com/p/DLSl0cNNb0z/?igsh=Zmtrc2pmZGFrdWtv' },
         // Graphic Design - Grids
         { id: 5, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (2).png', title: 'Artboard V2', description: 'Grid Layout', link: 'https://www.instagram.com/p/DQt0aBoEg1B/?igsh=MW80czdsNjR3dnFzdg==' },
-        { id: 6, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (3).png', title: 'Artboard V3', description: 'Grid Layout', link: 'https://www.instagram.com/p/DQpGVqEEjMk/?igsh=MTBhY2lvOGVsazNqbA==' },
+        { id: 6, category: 'graphic', subcategory: 'grids', src: '/elements/grids/Artboard 1 (3).png', title: 'Eyes behind the Camera', description: 'Social Media Grid', link: 'https://www.instagram.com/p/DQpGVqEEjMk/?igsh=MTBhY2lvOGVsazNqbA==' },
         { id: 7, category: 'graphic', subcategory: 'grids', src: '/elements/grids/RECRUITMENT grid full-01.png', title: 'Recruitment Grid', description: 'Grid Layout', link: 'https://www.instagram.com/p/DN-5UFlkpBo/?igsh=MWRwMHl5Yzk0cXN5OA==' },
         { id: 8, category: 'graphic', subcategory: 'grids', src: '/elements/grids/eyes behind the camera.png', title: 'Eyes Behind Camera', description: 'Grid Layout', link: '#' },
 
@@ -26,17 +26,38 @@ const Work = () => {
             title: 'Diamond Price Predictor',
             shortDesc: 'End-to-end ML pipeline with 98% accuracy.',
             description: `Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
-            
-After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
-
-To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
+            After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
+            To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
             tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
-            src: '/elements/ai/diamond.png',
+            src: '/elements/ai/diamond.jpg',
             link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
         },
 
-        // Placeholders for other categories
-        { id: 10, category: 'software', title: 'Software Project Placeholder', description: 'Coming Soon' },
+        {
+            id: 10,
+            category: 'ai',
+            title: 'S.A.A.R.T.H.I. AI',
+            shortDesc: 'Coming Soon',
+            description: `Ever thought of having a personal manager?
+            Well, here it is! An AI-powered personal manager that can help you with your daily tasks, schedule, and more.
+            Coming soon...`,
+            // tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
+            src: '/elements/ai/saarthi.jpg',
+            // link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
+        },
+
+        {
+            id: 11,
+            category: 'ai',
+            title: 'Safe-Sight',
+            shortDesc: 'Coming Soon',
+            // description: `Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
+            // After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
+            // To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
+            // tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
+            src: '/elements/ai/safesight.png',
+            // link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
+        },
     ];
 
     const filteredWorks = works.filter(work => {
@@ -66,9 +87,9 @@ To conclude the lifecycle, I deployed the optimal regression model into a Stream
                 <h2>MY <span className="work-text">W</span>ork_</h2>
 
                 <div className="work-categories">
-                    <button className={`category-btn ${activeCategory === 'ai' ? 'active' : ''}`} onClick={() => setActiveCategory('ai')}>AI Development</button>
-                    <button className={`category-btn ${activeCategory === 'graphic' ? 'active' : ''}`} onClick={() => { setActiveCategory('graphic'); setActiveSubCategory('all'); }}>Graphic Design</button>
-                    <button className={`category-btn ${activeCategory === 'software' ? 'active' : ''}`} onClick={() => setActiveCategory('software')}>Software Development</button>
+                    <button className={`category-btn ${activeCategory === 'ai' ? 'active' : ''}`} onClick={() => setActiveCategory('ai')}>Development</button>
+                    <button className={`category-btn ${activeCategory === 'graphic' ? 'active' : ''}`} onClick={() => { setActiveCategory('graphic'); setActiveSubCategory('all'); }}>Designing</button>
+                    {/* <button className={`category-btn ${activeCategory === 'software' ? 'active' : ''}`} onClick={() => setActiveCategory('software')}>Software Development</button> */}
                 </div>
 
                 {activeCategory === 'graphic' && (
@@ -123,9 +144,13 @@ To conclude the lifecycle, I deployed the optimal regression model into a Stream
                                 <div className="project-modal-details" data-lenis-prevent>
                                     <h3>{selectedProject.title}</h3>
                                     <div className="project-description">
-                                        {selectedProject.description.split('\n').map((line, i) => (
-                                            line.trim() && <p key={i}>{line}</p>
-                                        ))}
+                                        {selectedProject.description ? (
+                                            selectedProject.description.split('\n').map((line, i) => (
+                                                line.trim() && <p key={i}>{line}</p>
+                                            ))
+                                        ) : (
+                                            <p>Project details coming soon.</p>
+                                        )}
                                     </div>
 
                                     {selectedProject.tags && (

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Manrope:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap');
 
 :root {
   /* Premium Monochrome Palette */
@@ -27,6 +27,8 @@
   /* Uppercase Sans */
   --font-script: 'Luxurious Script', cursive;
   /* Script */
+  --font-logo: 'Syncopate', sans-serif;
+  /* Stylized Logo Font */
 }
 
 [data-theme="light"] {
@@ -168,7 +170,7 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
 }

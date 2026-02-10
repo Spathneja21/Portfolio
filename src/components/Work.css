@@ -1,7 +1,7 @@
 .work-categories {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 15rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }

@@ -1,6 +1,6 @@
 .contact-container {
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .section.contact {
@@ -77,7 +77,7 @@
 /* Social Links Animation */
 .social-links {
     display: flex;
-    gap: 3rem;
+    gap: 4.5rem;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     opacity: 0;
 }

@@ -12,7 +12,7 @@ const Skills = () => {
                         <ul>
                             <li>Scikit-learn</li>
                             <li>Seaborn</li>
-                            <li>Artificial Neural Networks</li>
+                            <li>Neural Networks</li>
                             <li>Data Science</li>
                             <li>LSTMs</li>
                         </ul>
@@ -24,6 +24,7 @@ const Skills = () => {
                             <li>Adobe Photoshop</li>
                             <li>Affinity</li>
                             <li>Procreate</li>
+                            <li>Figma</li>
                         </ul>
                     </div>
                     <div className="skill-card">
@@ -32,6 +33,7 @@ const Skills = () => {
                             <li>JavaScript</li>
                             <li>React.js</li>
                             <li>Vite</li>
+                            <li>FastAPI</li>
                         </ul>
                     </div>
                 </div>
