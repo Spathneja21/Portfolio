@@ -195,12 +195,16 @@
     }
 
     .pill-nav {
-        gap: 1rem;
+        gap: 0.75rem;
         /* Allow wrapping for expanded state */
         flex-wrap: wrap;
         background: var(--pill-bg);
         border-radius: 30px;
-        padding: 0.5rem 1.5rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
     }
 
     .pill-nav-items {
@@ -211,7 +215,7 @@
         background: transparent;
         border-radius: 20px;
         order: 3;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         overflow: hidden;
     }
 
@@ -239,14 +243,28 @@
         background: var(--bg-secondary);
     }
 
-    .theme-toggle-pill {
-        margin-left: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
     .pill-logo {
         margin: 0;
         flex-grow: 1;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* Extra small screens optimization */
+    @media (max-width: 480px) {
+        .logo-text {
+            font-size: 1.1rem;
+        }
+
+        .pill-nav {
+            padding: 0.4rem 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .mobile-toggle {
+            width: 26px;
+            height: 26px;
+        }
     }
 
     /* Mobile Menu Toggle */
