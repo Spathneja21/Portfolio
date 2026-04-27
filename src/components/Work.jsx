@@ -120,13 +120,25 @@ const Work = () => {
             id: 25,
             category: 'ai',
             title: 'Safe-Sight',
-            shortDesc: 'Coming Soon',
-            // description: `Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
-            // After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
-            // To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
-            // tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
+            shortDesc: 'An end-to-end pipeline that processes uploaded videos to detect helmet-compliance violations.',
+            description: `SafeSight is a multi-stage computer vision pipeline that processes uploaded videos to detect helmet-compliance violations. 
+                          It is built without YOLO — instead using Faster R-CNN (ResNet-50 FPN backbone) combined with a custom rule-based spatial reasoning engine that infers whether a person is wearing a helmet.
+                          Used 5000 images data and the accuracy is 82.6% for the detection of helmets in images`,
+            tags: ['FasterRCNN', 'ReactJs', 'HuggingFace', 'Flask'],
             src: '/elements/ai/safesight.png',
-            // link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
+            link: 'https://safesight-two.vercel.app/'
+        },
+
+        {
+            id: 26,
+            category: 'ai',
+            title: 'Fine Arts and Photography Website',
+            shortDesc: 'Official Website for Fine Arts and Photography Society',
+            description: `Built a website for Fine Arts and Photography Society,Thapar University. 
+                          A platform for artists to showcase their work and for the society to manage its events and members.`,
+            tags: ['Replit', 'TailwindCSS', 'Typescript'],
+            src: '/elements/ai/faps.png',
+            link: 'https://faps-website--ayushjuneja11.replit.app/'
         },
     ];
 
