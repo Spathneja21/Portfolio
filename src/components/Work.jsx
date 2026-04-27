@@ -140,6 +140,18 @@ const Work = () => {
             src: '/elements/ai/faps.png',
             link: 'https://faps-website--ayushjuneja11.replit.app/'
         },
+
+        {
+            id: 27,
+            category: 'ai',
+            title: 'Market Place Navigation Bot',
+            shortDesc: 'Deatails Coming Soon',
+            // description: `Built a website for Fine Arts and Photography Society,Thapar University. 
+            //               A platform for artists to showcase their work and for the society to manage its events and members.`,
+            // tags: ['Replit', 'TailwindCSS', 'Typescript'],
+            // src: '/elements/ai/faps.png',
+            // link: 'https://faps-website--ayushjuneja11.replit.app/'
+        },
     ];
 
     const filteredWorks = works.filter(work => {
