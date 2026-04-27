@@ -145,11 +145,11 @@ const Work = () => {
             id: 27,
             category: 'ai',
             title: 'Market Place Navigation Bot',
-            shortDesc: 'Deatails Coming Soon',
+            shortDesc: 'Details Coming Soon',
             // description: `Built a website for Fine Arts and Photography Society,Thapar University. 
             //               A platform for artists to showcase their work and for the society to manage its events and members.`,
             // tags: ['Replit', 'TailwindCSS', 'Typescript'],
-            // src: '/elements/ai/faps.png',
+            src: '/elements/ai/ros.png',
             // link: 'https://faps-website--ayushjuneja11.replit.app/'
         },
     ];
