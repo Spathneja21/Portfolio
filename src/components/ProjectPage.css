@@ -1,0 +1,348 @@
+/* ============================================================
+   ProjectPage — Blog-style post layout
+   ============================================================ */
+
+/* ── Root ── */
+.pp-root {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    animation: pp-fade-in 0.45s ease both;
+}
+
+@keyframes pp-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ============================================================
+   Sticky Top Bar
+   ============================================================ */
+.pp-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 2.5rem;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.pp-topbar-title {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 1rem;
+}
+
+.pp-topbar-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pp-topbar-link:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* ── Back pill button (reused in topbar + footer) ── */
+.pp-back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    cursor: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.pp-back-pill:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.pp-back-pill svg {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.pp-back-pill:hover svg {
+    transform: translateX(-3px);
+}
+
+/* ============================================================
+   Hero Banner — full-width cover image
+   ============================================================ */
+.pp-hero-banner {
+    position: relative;
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+    background: #000;
+    animation: pp-hero-in 0.6s ease 0.1s both;
+}
+
+@keyframes pp-hero-in {
+    from { opacity: 0; transform: scale(1.03); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.pp-hero-banner img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: brightness(0.78);
+    transition: transform 8s ease;
+}
+
+.pp-hero-banner:hover img {
+    transform: scale(1.02);
+}
+
+/* Gradient fade-out at bottom for seamless blend */
+.pp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        var(--bg-primary) 100%
+    );
+    pointer-events: none;
+}
+
+/* ============================================================
+   Blog Body — centered reading column
+   ============================================================ */
+.pp-body {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 6rem;
+    animation: pp-body-in 0.55s ease 0.2s both;
+}
+
+@keyframes pp-body-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Meta row (category badge + tags) ── */
+.pp-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+}
+
+.pp-category-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-primary);
+    background: var(--text-primary);
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+}
+
+.pp-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    background: transparent;
+}
+
+/* ── Title ── */
+.pp-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    text-transform: none;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    margin: 0 0 1rem 0;
+}
+
+/* ── Lead / subtitle ── */
+.pp-lead {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1px;
+}
+
+/* ── Horizontal rule ── */
+.pp-rule {
+    height: 1px;
+    background: var(--glass-border);
+    margin: 2rem 0;
+}
+
+/* ── Body copy ── */
+.pp-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+}
+
+.pp-content p {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    letter-spacing: 0.1px;
+}
+
+/* ── CTA ── */
+.pp-cta-row {
+    margin-bottom: 3.5rem;
+}
+
+.pp-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2.2rem;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.pp-cta-btn:hover {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+/* ── Footer nav ── */
+.pp-footer-nav {
+    padding-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* ============================================================
+   Not Found
+   ============================================================ */
+.pp-not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.pp-not-found-icon {
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--glass-border);
+    line-height: 1;
+}
+
+.pp-not-found h2 {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+    .pp-topbar {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .pp-topbar-title {
+        display: none;
+    }
+
+    .pp-hero-banner img {
+        height: 280px;
+    }
+
+    .pp-body {
+        padding: 2.5rem 1.2rem 4rem;
+    }
+
+    .pp-title {
+        font-size: 2rem;
+    }
+
+    .pp-lead {
+        font-size: 1.05rem;
+    }
+
+    .pp-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp-hero-banner img {
+        height: 220px;
+    }
+
+    .pp-topbar-link {
+        display: none;
+    }
+}

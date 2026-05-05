@@ -13,7 +13,7 @@
   /* White accent */
   --accent-secondary: #cccccc;
   /* Light grey accent */
-  --accent-gradient: linear-gradient(to right, #ffffff, #888888);
+  --accent-gradient: linear-gradient(to right, #ffffff, #d7d4d4);
   /* White to Grey gradient */
   --bg-gradient: linear-gradient(135deg, #131111 0%, #000000 50%, #010100 100%);
 
@@ -39,7 +39,7 @@
   --accent-primary: #000000;
   --accent-secondary: #333333;
   --accent-gradient: linear-gradient(to right, #000000, #555555);
-  --bg-gradient: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 50%, #ffffff 100%);
+  --bg-gradient: linear-gradient(135deg, #e7e4e4 0%, #f5f5f5 30%, #ffffff 100%);
 
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.1);
