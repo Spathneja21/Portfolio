@@ -8,11 +8,13 @@ const Work = () => {
     const [activeCategory, setActiveCategory] = useState('ai');
     const [activeSubCategory, setActiveSubCategory] = useState('all');
 
-    const filteredWorks = works.filter(work => {
-        if (work.category !== activeCategory) return false;
-        if (activeCategory === 'graphic' && activeSubCategory !== 'all' && work.subcategory !== activeSubCategory) return false;
-        return true;
-    });
+    const filteredWorks = works
+        .filter(work => {
+            if (work.category !== activeCategory) return false;
+            if (activeCategory === 'graphic' && activeSubCategory !== 'all' && work.subcategory !== activeSubCategory) return false;
+            return true;
+        })
+        .sort((a, b) => a.id - b.id);
 
     const handleWorkClick = (work) => {
         navigate(`/project/${work.id}`);
@@ -78,7 +80,6 @@ const Work = () => {
                                         <h4>{work.title}</h4>
                                         <div className="work-meta">
                                             <p>{work.shortDesc || work.description}</p>
-                                            <span className="work-link-icon">↗</span>
                                         </div>
                                     </div>
                                 )}

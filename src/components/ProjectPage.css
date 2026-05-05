@@ -228,17 +228,61 @@
 
 /* ── Body copy ── */
 .pp-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
     margin-bottom: 3rem;
 }
 
-.pp-content p {
+.pp-markdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.pp-markdown p {
     font-size: 1.08rem;
     line-height: 1.9;
     color: var(--text-secondary);
     letter-spacing: 0.1px;
+    margin: 0;
+}
+
+.pp-markdown img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+}
+
+.pp-markdown h1, 
+.pp-markdown h2, 
+.pp-markdown h3 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.pp-markdown h2 { font-size: 2rem; }
+.pp-markdown h3 { font-size: 1.5rem; }
+
+.pp-markdown ul, 
+.pp-markdown ol {
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.pp-markdown li {
+    margin-bottom: 0.5rem;
+}
+
+.pp-markdown a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* ── CTA ── */

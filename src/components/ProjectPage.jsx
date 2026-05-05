@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import works from '../data/worksData';
 import './ProjectPage.css';
 
@@ -75,10 +76,8 @@ const ProjectPage = () => {
 
                 {/* Body copy */}
                 {project.description ? (
-                    <div className="pp-content">
-                        {project.description.split('\n').map((line, i) =>
-                            line.trim() && <p key={i}>{line.trim()}</p>
-                        )}
+                    <div className="pp-content pp-markdown">
+                        <ReactMarkdown>{project.description}</ReactMarkdown>
                     </div>
                 ) : (
                     <div className="pp-content">
