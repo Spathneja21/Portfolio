@@ -138,7 +138,7 @@ We used a **5000-image dataset** and achieved the following metrics:
                       A platform for artists to showcase their work and for the society to manage its events and members.`,
         tags: ['Replit', 'TailwindCSS', 'Typescript'],
         src: '/elements/ai/faps.png',
-        link: 'https://faps-website--ayushjuneja11.replit.app/'
+        link: 'https://faps-website.vercel.app/'
     },
     {
         id: 24,
@@ -146,6 +146,22 @@ We used a **5000-image dataset** and achieved the following metrics:
         title: 'Market Place Navigation Bot',
         shortDesc: 'Details Coming Soon',
         src: '/elements/ai/ros.png',
+    },
+    {
+        id: 28,
+        category: 'blogs',
+        title: 'The Closed-Loop Workflow: A better approach to use Gemini and NotebookLM together',
+        shortDesc: 'An approach to use Gemini and NotebookLM together',
+        src: '/elements/blogs/1.png',
+        link: 'https://shubhampathneja21.substack.com/p/the-closed-loop-workflow-a-better'
+    },
+    {
+        id: 29,
+        category: 'blogs',
+        title: 'Keras-Tuner: Letting Your Neural Network Tune Itself',
+        shortDesc: 'Why guessing the number of neurons, layers, and optimizers by hand is a thing of the past',
+        src: '/elements/blogs/2.png',
+        link: 'https://shubhampathneja21.substack.com/p/keras-tuner-letting-your-neural-network'
     },
 ];
 

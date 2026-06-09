@@ -39,7 +39,7 @@ const ProjectPage = () => {
                 <span className="pp-topbar-title">{project.title}</span>
                 {project.link && project.link !== '#' && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="pp-topbar-link">
-                        View Project ↗
+                        {project.category === 'blogs' ? 'Read the blog ' : 'View Project'} ↗
                     </a>
                 )}
             </header>
@@ -81,7 +81,7 @@ const ProjectPage = () => {
                     </div>
                 ) : (
                     <div className="pp-content">
-                        <p>Project details coming soon. Stay tuned!</p>
+                        <p></p>
                     </div>
                 )}
 
@@ -89,7 +89,7 @@ const ProjectPage = () => {
                 {project.link && project.link !== '#' && (
                     <div className="pp-cta-row">
                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="pp-cta-btn">
-                            Open Project <span aria-hidden>↗</span>
+                            {project.category === 'blogs' ? 'Read the blog' : 'Open Project'} <span aria-hidden>↗</span>
                         </a>
                     </div>
                 )}
