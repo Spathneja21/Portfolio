@@ -54,6 +54,11 @@
     margin-bottom: -1rem;
 }
 
+.hero-content h1 {
+    font-size: clamp(1.8rem, 2.8vw + 1rem, 3.8rem);
+    white-space: nowrap;
+}
+
 .hero-content p {
     font-size: 1.2rem;
     color: var(--text-secondary);
@@ -116,6 +121,11 @@
     .hero-visual {
         display: none;
         /* Hide visual on small screens for simplicity or adjust */
+    }
+
+    .hero-content h1 {
+        white-space: normal;
+        font-size: clamp(1.8rem, 7vw, 3rem);
     }
 }
 

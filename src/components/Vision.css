@@ -7,12 +7,28 @@
 
 .vision-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 4rem;
     text-align: center;
     width: 100%;
 }
+
+.vision-image-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vision-robot-arm {
+    width: 280px;
+    height: auto;
+    transform-origin: center center;
+    animation: rotateRight 18s linear infinite;
+}
+
 
 .vision-content {
     flex: 1;
@@ -55,5 +71,9 @@
     .vision-content h2 {
         white-space: nowrap;
         font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .vision-image-container {
+        display: none;
     }
 }

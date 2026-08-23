@@ -32,9 +32,6 @@ function PortfolioHome({ theme, toggleTheme }) {
       <Skills />
       <Work />
       <Contact />
-      <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-        <p>&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
-      </footer>
     </ReactLenis>
   );
 }
