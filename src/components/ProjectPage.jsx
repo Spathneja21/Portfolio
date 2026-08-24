@@ -44,14 +44,6 @@ const ProjectPage = () => {
                 )}
             </header>
 
-            {/* ── Full-width hero banner ── */}
-            {project.src && project.category !== 'blogs' && (
-                <div className="pp-hero-banner">
-                    <img src={encodeURI(project.src)} alt={project.title} />
-                    <div className="pp-hero-overlay" />
-                </div>
-            )}
-
             {/* ── Blog post body ── */}
             <div className="pp-body">
 

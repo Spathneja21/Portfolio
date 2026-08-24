@@ -1,3 +1,23 @@
+.wp-work-hero-image {
+    flex-shrink: 0;
+}
+
+.wp-work-hero-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .wp-work-hero-image {
+        margin-bottom: 1rem;
+    }
+
+    .wp-work-hero-image img {
+        max-width: 200px;
+    }
+}
+
 .wp-work-subcategories {
     display: flex;
     justify-content: center;
@@ -56,6 +76,167 @@
 .wp-work-grid {
     column-count: 3;
     column-gap: 2rem;
+}
+
+/* Envelope / folder-tab stack */
+.envelope-stack {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 8rem;
+    padding-bottom: 30vh;
+}
+
+.envelope-card {
+    position: sticky;
+    padding: 20px 20px 20px;
+    margin-bottom: 1rem;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: var(--folder-color, #e8ddc9);
+    border-radius: 22px;
+    box-shadow: 0 -10px 24px -8px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.envelope-tab-shape {
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    width: 45%;
+    max-width: 600px;
+    height: 40px;
+    background: var(--folder-color, #e8ddc9);
+    border-radius: 14px 14px 0 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    cursor: none;
+}
+
+.envelope-tab-shape-label {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(0.8rem, 2.8vw, 1.5rem);
+    color: #1a1a1a;
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .envelope-tab-shape {
+        width: 78%;
+        max-width: none;
+        height: 32px;
+        top: -22px;
+        padding: 0 0.75rem;
+    }
+}
+
+.envelope-front {
+    position: relative;
+    z-index: 1;
+    background: #17161a;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.envelope-tab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem 1.5rem;
+    cursor: none;
+}
+
+.envelope-tab-icon {
+    font-size: 1.3rem;
+    color: var(--folder-color, #f0c419);
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+}
+
+.envelope-card.is-open .envelope-tab-icon {
+    transform: rotate(135deg);
+}
+
+.envelope-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.6s ease;
+}
+
+.envelope-content-inner {
+    overflow: hidden;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.envelope-card.is-open .envelope-content {
+    grid-template-rows: 1fr;
+}
+
+.envelope-image {
+    max-width: 300px;
+    flex-shrink: 0;
+    overflow: hidden;
+    align-self: stretch;
+}
+
+.envelope-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.envelope-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+}
+
+.envelope-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.envelope-cta {
+    color: var(--folder-color, #f0c419);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: none;
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    .envelope-content-inner {
+        flex-direction: column;
+    }
+
+    .envelope-image {
+        width: 100%;
+    }
 }
 
 .wp-animate-grid {
@@ -398,12 +579,28 @@
 /* Journey Section */
 .wp-work-journey {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 3rem auto;
-    text-align: center;
+    text-align: left;
     padding: 0 1rem;
     position: relative;
     animation: wpFadeIn 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.wp-journey-content {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .wp-work-journey {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 .wp-journey-content h3 {

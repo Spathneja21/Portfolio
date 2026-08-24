@@ -24,18 +24,7 @@ const works = [
     { id: 22, category: 'graphic', src: '/elements/designs/website is live-01.webp', title: 'Website is Live' },
 
     // AI / Development
-    {
-        id: 27,
-        category: 'ai',
-        title: 'Diamond Price Predictor',
-        shortDesc: 'End-to-end ML pipeline with 98% accuracy.',
-        description: `Developed an end-to-end machine learning system to automate diamond pricing using a dataset of 53,940 records. 
-        After rigorous data cleaning, deduplication, and outlier removal, I engineered a pipeline to evaluate 7 regression and 8 classification models. XGBoost emerged as the top performer for both tasks, achieving a 98.11% R2 score for price prediction and 96.01% accuracy for quality classification. The suite included diverse architectures from Linear Regression and SVMs to MLP Neural Networks.
-        To conclude the lifecycle, I deployed the optimal regression model into a Streamlit web application, providing real-time, data-driven valuations for the gemstone industry.`,
-        tags: ['XGBoost', 'Python', 'Streamlit', 'Scikit-Learn'],
-        src: '/elements/ai/diamond.jpg',
-        link: 'https://github.com/Spathneja21/Diamond_price_predictor.git'
-    },
+    
     {
         id: 23,
         category: 'ai',
@@ -129,7 +118,7 @@ We used a **5000-image dataset** and achieved the following metrics:
         link: 'https://safesight-two.vercel.app/'
     },
     {
-        id: 26,
+        id: 27,
         category: 'ai',
         title: 'Fine Arts and Photography Website',
         shortDesc: 'Official Website for Fine Arts and Photography Society, Thapar University',
@@ -140,11 +129,38 @@ We used a **5000-image dataset** and achieved the following metrics:
         link: 'https://faps-website.vercel.app/'
     },
     {
+        id: 26,
+        category: 'ai',
+        title: 'Unexplored Field Navigator',
+        shortDesc: 'Details Coming Soon',
+    },
+    {
         id: 24,
         category: 'ai',
         title: 'Market Place Navigation Bot',
-        shortDesc: 'Details Coming Soon',
+        shortDesc: 'Autonomous differential-drive robot that navigates supermarket aisles using SLAM and Nav2.',
+        description: `Design and simulation of a differential-drive autonomous mobile robot for large supermarkets, featuring SLAM-based mapping and Nav2 autonomous navigation in ROS 2.
+
+### Overview
+The robot assists customers by autonomously navigating to product locations within a simulated supermarket — modeled with shelving aisles, a checkout counter, product crates, and a customer, all built in Gazebo Sim.
+
+### Key Features
+- **Custom CAD-designed chassis** — multi-layer body modeled in Fusion 360, exported as STL meshes and converted to URDF via Xacro
+- **360° GPU LiDAR** — 360 samples at 10 Hz, 0.1–10 m range with Gaussian noise for realistic aisle mapping
+- **SLAM Toolbox** — online synchronous SLAM with Ceres-based scan matching and loop closure to build the store map
+- **Full Nav2 stack** — AMCL localisation, NavFn global planning, DWB local control, and a collision monitor for safe navigation around customers
+- **ROS–Gazebo bridge** — bidirectional topic bridges (odometry, joint states, LiDAR, cmd_vel, TF) for seamless sim-to-ROS communication
+
+### Why Differential Drive?
+Supermarket aisles are narrow (1.5–2.5 m), so the robot needed to be maneuverable without the added complexity of mecanum or Ackermann steering. Differential drive gives zero-turn-radius maneuvering with just two motors and full support from ROS's *diff_drive_controller*.
+
+### Pipeline
+LiDAR scans and odometry feed SLAM Toolbox to build a 0.05 m/pixel occupancy grid map of the store. Once mapped, Nav2's AMCL localises the robot on that map, NavFn plans a global path to the target shelf, and DWB generates real-time velocity commands — with a collision monitor watching for customers stepping into the aisle.
+
+*This makes it ideal for real-time, obstacle-aware in-store navigation.*`,
+        tags: ['ROS 2', 'Gazebo', 'SLAM Toolbox', 'Nav2'],
         src: '/elements/ai/ros.png',
+        link: 'https://github.com/ctxnn/Ros-AMR-Mobile-Robot.git'
     },
     {
         id: 28,

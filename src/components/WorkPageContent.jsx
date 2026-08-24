@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import './WorkPageContent.css';
 import works from '../data/worksData';
 
+const FOLDER_COLORS = ['#ffffff', '#dbd9d8', '#bdbebd',, '#909090', '#efec3b'];
+
 const WorkPageContent = () => {
     const navigate = useNavigate();
+    const cardRefs = useRef([]);
 
     const filteredWorks = works
         .filter(work => work.category === 'ai')
@@ -13,12 +17,36 @@ const WorkPageContent = () => {
         navigate(`/project/${work.id}`);
     };
 
+    useEffect(() => {
+        const cards = cardRefs.current.filter(Boolean);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-open');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { rootMargin: '-40% 0px -40% 0px' }
+        );
+
+        cards.forEach((card) => observer.observe(card));
+
+        return () => observer.disconnect();
+    }, [filteredWorks.length]);
+
     return (
         <section id="work-page" className="section wp-work">
             <div className="container wp-work-container">
                 {/* <h2>The <span className="wp-work-text">W</span>ork_</h2> */}
 
                 <div className="wp-work-journey wp-animate-grid">
+                    <div className="wp-work-hero-image">
+                        <img src="/elements/work-robot.png" alt="" />
+                    </div>
+
                     <div className="wp-journey-content">
                         {/* <h3>Dev Odyssey</h3> */}
                         <p>
@@ -31,28 +59,54 @@ const WorkPageContent = () => {
                     </div>
                 </div>
 
-                <div className="wp-work-grid wp-animate-grid">
+                <div className="envelope-stack">
                     {filteredWorks.length > 0 ? (
-                        filteredWorks.map((work) => (
+                        filteredWorks.map((work, index) => (
                             <div
                                 key={work.id}
-                                className="wp-work-item"
-                                onClick={() => handleWorkClick(work)}
-                                style={{ cursor: 'none' }}
+                                className="envelope-card"
+                                style={{
+                                    top: `${90 + index * 46}px`,
+                                    zIndex: index + 1,
+                                    '--folder-color': FOLDER_COLORS[index % FOLDER_COLORS.length]
+                                }}
+                                ref={(el) => { cardRefs.current[index] = el; }}
                             >
-                                <div className="wp-work-image-container">
-                                    {work.src ? (
-                                        <img src={encodeURI(work.src)} alt={work.title} loading="lazy" />
-                                    ) : (
-                                        <div className="wp-placeholder-work">
-                                            <span>{work.title}</span>
-                                        </div>
-                                    )}
+                                <div className="envelope-back" />
+                                <div
+                                    className="envelope-tab-shape"
+                                    onClick={() => handleWorkClick(work)}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter' || e.key === ' ') handleWorkClick(work);
+                                    }}
+                                    style={{ cursor: 'none' }}
+                                >
+                                    <span className="envelope-tab-shape-label">{work.title}</span>
                                 </div>
-                                <div className="wp-work-info">
-                                    <h4>{work.title}</h4>
-                                    <div className="wp-work-meta">
-                                        <p>{work.shortDesc || work.description}</p>
+
+                                <div className="envelope-front">
+                                    
+
+                                    <div className="envelope-content">
+                                        <div className="envelope-content-inner">
+                                            <div className="envelope-image">
+                                                {work.src ? (
+                                                    <img src={encodeURI(work.src)} alt={work.title} loading="lazy" />
+                                                ) : (
+                                                    <div className="wp-placeholder-work">
+                                                        <span>{work.title}</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="envelope-info">
+                                                <p>{work.shortDesc || work.description}</p>
+                                                <span className="envelope-cta" onClick={() => handleWorkClick(work)}>
+                                                    View Project →
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
