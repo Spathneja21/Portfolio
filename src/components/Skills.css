@@ -3,7 +3,7 @@
 }
 
 .skills-intro {
-    font-size: 1.15rem;
+    font-size: 1.6rem;
     color: var(--text-primary);
     max-width: 480px;
     line-height: 1.6;
@@ -15,7 +15,7 @@
     text-transform: none;
     letter-spacing: 0;
     font-weight: 400;
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
     text-align: center;
     margin: 2.5rem 0 2rem;
 }
@@ -29,7 +29,7 @@
 
 .skills-row-image {
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     height: auto;
     display: block;
 }

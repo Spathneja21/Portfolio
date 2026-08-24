@@ -219,8 +219,3 @@
     }
 }
 
-@media (max-width: 480px) {
-    .about-design-grid {
-        column-count: 1;
-    }
-}

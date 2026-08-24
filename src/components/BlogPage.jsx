@@ -23,7 +23,7 @@ const BlogPage = () => {
                 <div className="container blog-page-container">
                     {/* <h2>My <span className="blog-page-text">B</span>logs_</h2> */}
                     <p className="blog-page-intro blog-page-animate">
-                        I like to document my work and share my knowledge. It helps to organize my work better and also helps others to learn from my mistakes and successes.
+                        I like to <i><strong>document</strong></i> my work and share my knowledge. It helps to organize my work better and also helps others to learn from my mistakes and successes.
                     </p>
 
                     <div className="blog-page-list blog-page-animate">
@@ -50,6 +50,19 @@ const BlogPage = () => {
                             <p className="blog-page-empty">No blog posts yet — check back soon.</p>
                         )}
                     </div>
+
+                    <p className="blog-page-substack-cta">
+                         To get updates of the blogs, join my Substack account
+                    </p>
+
+                    <a
+                        href="https://substack.com/@shubhampathneja21"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn blog-page-substack-btn"
+                    >
+                        Join Substack
+                    </a>
                 </div>
             </section>
             <Contact />
