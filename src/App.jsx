@@ -16,7 +16,7 @@ import './App.css';
 import { ReactLenis } from 'lenis/react';
 import 'lenis/dist/lenis.css';
 
-function PortfolioHome() {
+function LenisWrapper({ children }) {
   return (
     <ReactLenis root options={{
       duration: 1.2,
@@ -28,12 +28,20 @@ function PortfolioHome() {
       smoothTouch: false,
       touchMultiplier: 2,
     }}>
+      {children}
+    </ReactLenis>
+  );
+}
+
+function PortfolioHome() {
+  return (
+    <LenisWrapper>
       <Navbar />
       <Hero />
       <Vision />
       <Work />
       <Contact />
-    </ReactLenis>
+    </LenisWrapper>
   );
 }
 
@@ -48,9 +56,9 @@ function App() {
         ) : (
           <Routes>
             <Route path="/" element={<PortfolioHome />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/work" element={<WorkPage />} />
-            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/about" element={<LenisWrapper><AboutPage /></LenisWrapper>} />
+            <Route path="/work" element={<LenisWrapper><WorkPage /></LenisWrapper>} />
+            <Route path="/blog" element={<LenisWrapper><BlogPage /></LenisWrapper>} />
             <Route path="/project/:id" element={<ProjectPage />} />
           </Routes>
         )}

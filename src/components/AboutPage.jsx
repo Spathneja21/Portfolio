@@ -70,7 +70,7 @@ const AboutPage = () => {
             <div className="about-card reveal" ref={addRevealRef}>
                 <div className="about-card-text">
                     <span className="about-greeting">नमस्ते again,</span>
-                    <h1 className="about-name">My name is shubham</h1>
+                    <h1 className="about-name">My name is Shubham</h1>
 
                     <p className="about-para">
                         Growing up in Haryana, India gave me a strong, grounded foundation—a kind of natural grit that they now channel into building tomorrow's tech.
