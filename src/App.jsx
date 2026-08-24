@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Vision from './components/Vision';
-import Skills from './components/Skills';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
 import ProjectPage from './components/ProjectPage';
+import AboutPage from './components/AboutPage';
+import WorkPage from './components/WorkPage';
+import BlogPage from './components/BlogPage';
 import './App.css';
 
 import { ReactLenis } from 'lenis/react';
 import 'lenis/dist/lenis.css';
 
-function PortfolioHome({ theme, toggleTheme }) {
+function PortfolioHome() {
   return (
     <ReactLenis root options={{
       duration: 1.2,
@@ -26,10 +28,9 @@ function PortfolioHome({ theme, toggleTheme }) {
       smoothTouch: false,
       touchMultiplier: 2,
     }}>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <Hero />
       <Vision />
-      <Skills />
       <Work />
       <Contact />
     </ReactLenis>
@@ -38,15 +39,6 @@ function PortfolioHome({ theme, toggleTheme }) {
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
 
   return (
     <BrowserRouter>
@@ -55,7 +47,10 @@ function App() {
           <Preloader finishLoading={() => setLoading(false)} />
         ) : (
           <Routes>
-            <Route path="/" element={<PortfolioHome theme={theme} toggleTheme={toggleTheme} />} />
+            <Route path="/" element={<PortfolioHome />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/project/:id" element={<ProjectPage />} />
           </Routes>
         )}

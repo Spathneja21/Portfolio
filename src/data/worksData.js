@@ -152,6 +152,7 @@ We used a **5000-image dataset** and achieved the following metrics:
         category: 'blogs',
         title: 'The Closed-Loop Workflow: A better approach to use Gemini and NotebookLM together',
         shortDesc: 'An approach to use Gemini and NotebookLM together',
+        description: `Most workflows treat AI tools as isolated steps — you ask Gemini a question, then separately dump sources into NotebookLM, with no real feedback loop between the two. This post walks through a closed-loop approach that lets Gemini and NotebookLM inform each other continuously, so research, synthesis, and writing stay connected instead of scattered across disconnected sessions.`,
         src: '/elements/blogs/1.png',
         link: 'https://shubhampathneja21.substack.com/p/the-closed-loop-workflow-a-better'
     },
@@ -160,6 +161,7 @@ We used a **5000-image dataset** and achieved the following metrics:
         category: 'blogs',
         title: 'Keras-Tuner: Letting Your Neural Network Tune Itself',
         shortDesc: 'Why guessing the number of neurons, layers, and optimizers by hand is a thing of the past',
+        description: `Picking the right number of layers, neurons, and optimizer settings by hand is slow and mostly guesswork. This post covers how Keras-Tuner automates that search, letting the framework explore the hyperparameter space systematically instead of manually trying configurations one at a time.`,
         src: '/elements/blogs/2.png',
         link: 'https://shubhampathneja21.substack.com/p/keras-tuner-letting-your-neural-network'
     },

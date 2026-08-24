@@ -23,7 +23,7 @@
 }
 
 .vision-robot-arm {
-    width: 280px;
+    width: 350px;
     height: auto;
     transform-origin: center center;
     animation: rotateRight 18s linear infinite;

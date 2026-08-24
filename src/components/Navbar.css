@@ -1,4 +1,4 @@
-/* Pill Navigation Container */
+/* Navbar Container */
 .pill-nav-container {
     position: fixed;
     top: 1.5rem;
@@ -10,14 +10,6 @@
 }
 
 .pill-nav {
-    --nav-h: 42px;
-    --pill-pad-x: 18px;
-    --pill-gap: 3px;
-    --base: var(--text-primary);
-    --pill-bg: var(--bg-secondary);
-    --hover-text: var(--bg-primary);
-    --pill-text: var(--text-primary);
-
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -32,13 +24,11 @@
 .pill-logo {
     width: auto;
     height: auto;
-    border-radius: 0;
     background: transparent;
     padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
     text-decoration: none;
     flex-shrink: 0;
 }
@@ -47,7 +37,6 @@
     font-size: 1.5rem;
     font-weight: 600;
     font-family: var(--font-heading);
-    /* text-transform: uppercase; */
     letter-spacing: 0.8px;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -55,128 +44,29 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Nav Items Container */
-.pill-nav-items {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--nav-h);
-    background: var(--base);
-    border-radius: 9999px;
-    overflow: visible;
-}
-
-.pill-list {
+/* Nav Links */
+.nav-links {
     list-style: none;
     display: flex;
-    align-items: stretch;
-    gap: var(--pill-gap);
-    margin: 0;
-    padding: 3px;
-    height: 100%;
-}
-
-.pill-list>li {
-    display: flex;
-    height: 100%;
-}
-
-/* Pill Links */
-.pill {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 var(--pill-pad-x);
-    background: var(--pill-bg);
-    color: var(--pill-text);
+    gap: 5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 9999px;
-    box-sizing: border-box;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 0;
-    text-transform: uppercase;
+    text-transform: auto;
     letter-spacing: 0.5px;
     white-space: nowrap;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
 }
 
-/* Hover Circle */
-.pill .hover-circle {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    border-radius: 50%;
-    background: var(--base);
-    z-index: 1;
-    display: block;
-    pointer-events: none;
-    will-change: transform;
-}
-
-/* Label Stack */
-.pill .label-stack {
-    position: relative;
-    display: inline-block;
-    line-height: 1;
-    z-index: 2;
-}
-
-.pill .pill-label {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    line-height: 1;
-    will-change: transform;
-}
-
-.pill .pill-label-hover {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--hover-text);
-    z-index: 3;
-    display: inline-block;
-    will-change: transform, opacity;
-}
-
-/* Active State Indicator */
-.pill.is-active::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    background: var(--base);
-    border-radius: 50%;
-    z-index: 4;
-}
-
-/* Theme Toggle Button */
-.theme-toggle-pill {
-    background: var(--pill-bg);
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-}
-
-.theme-toggle-pill:hover {
-    transform: scale(1.1) rotate(15deg);
-    background: var(--base);
+.nav-link.is-active {
+    color: var(--accent-primary);
 }
 
 /* Scrolled State */
@@ -196,126 +86,31 @@
 
     .pill-nav {
         gap: 0.75rem;
-        /* Allow wrapping for expanded state */
-        flex-wrap: wrap;
-        background: var(--pill-bg);
-        border-radius: 30px;
-        padding: 0.4rem 1rem;
     }
 
     .logo-text {
         font-size: 1.25rem;
     }
 
-    .pill-nav-items {
-        display: none;
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        background: transparent;
-        border-radius: 20px;
-        order: 3;
-        margin-top: 0.5rem;
-        overflow: hidden;
+    .nav-links {
+        gap: 1.25rem;
     }
 
-    .pill-nav-items.open {
-        display: flex;
-        animation: slideDown 0.3s ease-out forwards;
+    .nav-link {
+        font-size: 12px;
     }
 
-    .pill-list {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        gap: 0.5rem;
-    }
-
-    .pill-list>li {
-        width: 100%;
-        height: 45px;
-    }
-
-    .pill {
-        width: 100%;
-        justify-content: flex-start;
-        padding-left: 1.5rem;
-        background: var(--bg-secondary);
-    }
-
-    .pill-logo {
-        margin: 0;
-        flex-grow: 1;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-
-    /* Extra small screens optimization */
     @media (max-width: 480px) {
         .logo-text {
             font-size: 1.1rem;
         }
 
-        .pill-nav {
-            padding: 0.4rem 0.75rem;
-            gap: 0.5rem;
+        .nav-links {
+            gap: 0.85rem;
         }
-
-        .mobile-toggle {
-            width: 26px;
-            height: 26px;
-        }
-    }
-
-    /* Mobile Menu Toggle */
-    .mobile-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 30px;
-        height: 30px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-    }
-
-    .mobile-toggle span {
-        width: 100%;
-        height: 2px;
-        background: var(--text-primary);
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    .mobile-toggle.open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-toggle.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-toggle.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Remove old navbar styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -334,7 +129,6 @@
 /* Legacy styles cleanup */
 .nav-container,
 .logo,
-.nav-links,
 .theme-toggle {
     display: none;
 }
