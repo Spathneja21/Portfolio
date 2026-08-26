@@ -160,7 +160,7 @@ LiDAR scans and odometry feed SLAM Toolbox to build a 0.05 m/pixel occupancy gri
 *This makes it ideal for real-time, obstacle-aware in-store navigation.*`,
         tags: ['ROS 2', 'Gazebo', 'SLAM Toolbox', 'Nav2'],
         src: '/elements/ai/ros.png',
-        link: 'https://github.com/ctxnn/Ros-AMR-Mobile-Robot.git'
+        link: 'https://github.com/ctxnn/Ros-AMR-Mobile-Robot/tree/fix-nav2-compatibility'
     },
     {
         id: 28,
@@ -179,6 +179,15 @@ LiDAR scans and odometry feed SLAM Toolbox to build a 0.05 m/pixel occupancy gri
         description: `Picking the right number of layers, neurons, and optimizer settings by hand is slow and mostly guesswork. This post covers how Keras-Tuner automates that search, letting the framework explore the hyperparameter space systematically instead of manually trying configurations one at a time.`,
         src: '/elements/blogs/2.png',
         link: 'https://shubhampathneja21.substack.com/p/keras-tuner-letting-your-neural-network'
+    },
+    {
+        id: 29,
+        category: 'blogs',
+        title: 'Stop Your AI from Over-Engineering: Meet Ponytail',
+        shortDesc: 'A lazy supportive senior to make your code compress without compromising the logic.',
+        description: `Ponytail is a tool that helps you compress your code without losing the logic. It identifies redundant or overly complex code patterns and suggests simpler alternatives, making your codebase cleaner and more maintainable.`,
+        src: '/elements/blogs/2.png',
+        link: 'https://shubhampathneja21.substack.com/p/stop-your-ai-from-over-engineering'
     },
 ];
 
