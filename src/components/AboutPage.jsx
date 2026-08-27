@@ -83,9 +83,9 @@ const AboutPage = () => {
                     <span className="about-dot"></span>
                 </div>
 
-                <div className="about-card-image">
+                {/* <div className="about-card-image">
                     <img src={profilePic} alt="Shubham Pathneja" />
-                </div>
+                </div> */}
             </div>
 
             <div className="about-focus reveal" ref={addRevealRef}>

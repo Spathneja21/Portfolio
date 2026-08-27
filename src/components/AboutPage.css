@@ -21,10 +21,11 @@
     margin: 0 auto 3rem;
     background: #000000;
     border-radius: 28px;
+    border: 3px solid var(--glass-border);
     padding: 3.5rem;
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3rem;
     min-height: 540px;
     position: relative;
@@ -33,7 +34,7 @@
 
 .about-card-text {
     flex: 1;
-    max-width: 480px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
