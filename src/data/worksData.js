@@ -30,7 +30,7 @@ const works = [
         category: 'ai',
         section: 'projects',
         order: 2,
-        title: 'SAARTHI',
+        title: 'SAARTHI (COMING SOON)',
         subtitle: 'Smart AI Assistant for Task Handling and Information',
         meta: 'June 2025 – Present · Team Lead',
         hideLead: true,

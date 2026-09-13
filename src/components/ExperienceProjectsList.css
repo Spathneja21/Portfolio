@@ -30,7 +30,7 @@
 
 .wp-entry-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3vw, 5rem);
+    font-size: clamp(1.6rem, 3.5vw, 5rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -39,13 +39,13 @@
 }
 
 .wp-entry-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
     margin: 0.4rem 0 0 0;
 }
 
 .wp-entry-meta {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     margin: 0.2rem 0 0 0;
 }
@@ -61,7 +61,7 @@
     flex: 1;
     min-width: 0;
     color: var(--text-secondary);
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     margin: 0;
 }
@@ -88,7 +88,7 @@
     margin: 0;
     padding-left: 1.2rem;
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
 }
 
