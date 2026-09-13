@@ -57,9 +57,11 @@ const ProjectPage = () => {
 
                 {/* Title */}
                 <h1 className="pp-title">{project.title}</h1>
+                {project.subtitle && <h2 className="pp-subtitle">{project.subtitle}</h2>}
+                {project.meta && <p className="pp-project-meta">{project.meta}</p>}
 
-                {/* Lead / subtitle */}
-                {project.shortDesc && (
+                {/* Lead / subtitle (skipped when the description already opens with this line) */}
+                {project.shortDesc && !project.hideLead && (
                     <p className="pp-lead">{project.shortDesc}</p>
                 )}
 
@@ -74,6 +76,22 @@ const ProjectPage = () => {
                 ) : (
                     <div className="pp-content">
                         <p></p>
+                    </div>
+                )}
+
+                {/* Media gallery */}
+                {project.media && project.media.length > 0 && (
+                    <div className="pp-gallery">
+                        {project.media.map((item, i) => (
+                            <figure className="pp-gallery-item" key={i}>
+                                {item.type === 'video' ? (
+                                    <video src={encodeURI(item.src)} controls preload="metadata" />
+                                ) : (
+                                    <img src={encodeURI(item.src)} alt={item.caption || project.title} loading="lazy" />
+                                )}
+                                {item.caption && <figcaption>{item.caption}</figcaption>}
+                            </figure>
+                        ))}
                     </div>
                 )}
 

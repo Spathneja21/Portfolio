@@ -28,18 +28,39 @@ const works = [
     {
         id: 23,
         category: 'ai',
-        title: 'S.A.A.R.T.H.I. AI',
-        shortDesc: 'Coming Soon',
-        description: `Ever thought of having a personal manager?
-        Well, here it is! An AI-powered personal manager that can help you with your daily tasks, schedule, and more.
-        Coming soon...`,
+        section: 'projects',
+        order: 2,
+        title: 'SAARTHI',
+        subtitle: 'Smart AI Assistant for Task Handling and Information',
+        meta: 'June 2025 – Present · Team Lead',
+        hideLead: true,
+        shortDesc: 'Engineering an intelligent AI task-scheduling assistant tailored for college students juggling coursework, deadlines, and personal commitments.',
+        bullets: [
+            'Designed a custom weighted-scoring model powered by reinforcement learning that learns and adapts to individual student behavior over time',
+            'Full-stack architecture: Flutter frontend, PostgreSQL + Firebase backend, NLP/LLM-based input parsing for text and voice, cloud-deployed decision models',
+        ],
+        description: `Engineering an intelligent AI task-scheduling assistant tailored for college students juggling coursework, deadlines, and personal commitments.
+
+- Designed a custom weighted-scoring model powered by reinforcement learning that learns and adapts to individual student behavior over time
+- Full-stack architecture: Flutter frontend, PostgreSQL + Firebase backend, NLP/LLM-based input parsing for text and voice, cloud-deployed decision models`,
+        tags: ['Flutter', 'PostgreSQL', 'Firebase', 'Reinforcement Learning'],
         src: '/elements/ai/saarthi.jpg',
+        media: [
+            { type: 'video', src: '/elements/website media/SAARTHI/app demo.mp4', caption: 'App demo' },
+        ],
     },
     {
         id: 25,
         category: 'ai',
+        section: 'projects',
+        order: 3,
         title: 'SafeSight',
-        shortDesc: 'An Computer vision system to detect helmet-compliance violations.',
+        meta: 'January 2026 – April 2026',
+        shortDesc: 'Built a real-time behavioral anomaly detection system for industrial safety monitoring, deployed on existing CCTV infrastructure using Faster R-CNN with a ResNet50 backbone.',
+        bullets: [
+            'Detects and classifies anomalous behavior (e.g. helmet-compliance violations) directly from standard camera feeds',
+            'Generates automated violation reports with timestamps, severity, and confidence scores',
+        ],
         description: `SafeSight is a multi-stage computer vision pipeline that processes uploaded videos to detect helmet-compliance violations. 
 
 ### How it works
@@ -115,52 +136,171 @@ We used a **5000-image dataset** and achieved the following metrics:
 *This makes it ideal for automated construction site safety checks.*`,
         tags: ['FasterRCNN', 'ReactJs', 'HuggingFace', 'Flask'],
         src: '/elements/ai/safesight.png',
-        link: 'https://safesight-two.vercel.app/'
+        link: 'https://safesight-two.vercel.app/',
+        homeGallery: [
+            '/elements/website media/safesight/home page of website.png',
+            '/elements/website media/safesight/violation report.png',
+        ],
+        media: [
+            { type: 'image', src: '/elements/website media/safesight/home page of website.png', caption: 'Landing page' },
+            { type: 'video', src: '/elements/website media/safesight/sample output of pipeline.mp4', caption: 'Detection output with bounding boxes' },
+            { type: 'image', src: '/elements/website media/safesight/violation report.png', caption: 'Violation report UI' },
+        ],
     },
     {
         id: 27,
         category: 'ai',
+        section: 'projects',
+        order: 5,
         title: 'Fine Arts and Photography Website',
         shortDesc: 'Official Website for Fine Arts and Photography Society, Thapar University',
-        description: `Built a website for Fine Arts and Photography Society, Thapar University. 
+        description: `Built a website for Fine Arts and Photography Society, Thapar University.
                       A platform for artists to showcase their work and for the society to manage its events and members.`,
         tags: ['Replit', 'TailwindCSS', 'Typescript'],
         src: '/elements/ai/faps.png',
         link: 'https://faps-website.vercel.app/'
     },
     {
-        id: 26,
-        category: 'ai',
-        title: 'Unexplored Field Navigator',
-        shortDesc: 'Details Coming Soon',
-    },
-    {
         id: 24,
         category: 'ai',
-        title: 'Market Place Navigation Bot',
-        shortDesc: 'Autonomous differential-drive robot that navigates supermarket aisles using SLAM and Nav2.',
-        description: `Design and simulation of a differential-drive autonomous mobile robot for large supermarkets, featuring SLAM-based mapping and Nav2 autonomous navigation in ROS 2.
+        section: 'projects',
+        order: 1,
+        title: 'Marketplace Navigation Robot Simulator',
+        meta: 'March 2026 – June 2026',
+        hideLead: true,
+        shortDesc: 'Designed and simulated a differential-drive autonomous mobile robot (AMR) in MuJoCo for indoor supermarket navigation.',
+        bullets: [
+            'Implemented 2D LiDAR-based SLAM to build and continuously update an occupancy map of the supermarket',
+            'Integrated the ROS2 Nav2 stack for global path planning to target product locations, with local planning for obstacle avoidance',
+        ],
+        description: `Designed and simulated a differential-drive autonomous mobile robot (AMR) in MuJoCo, targeting the problem of indoor navigation and product-location assistance in large supermarket environments. The project addressed a practical retail-robotics use case: enabling a robot to autonomously navigate crowded, aisle-structured indoor spaces while helping customers or store staff locate specific products efficiently, rather than relying on static store maps or manual search.
 
-### Overview
-The robot assists customers by autonomously navigating to product locations within a simulated supermarket — modeled with shelving aisles, a checkout counter, product crates, and a customer, all built in Gazebo Sim.
+![MuJoCo AMR render](/elements/website%20media/marketplace%20simulator/robot%20model.png)
 
-### Key Features
-- **Custom CAD-designed chassis** — multi-layer body modeled in Fusion 360, exported as STL meshes and converted to URDF via Xacro
-- **360° GPU LiDAR** — 360 samples at 10 Hz, 0.1–10 m range with Gaussian noise for realistic aisle mapping
-- **SLAM Toolbox** — online synchronous SLAM with Ceres-based scan matching and loop closure to build the store map
-- **Full Nav2 stack** — AMCL localisation, NavFn global planning, DWB local control, and a collision monitor for safe navigation around customers
-- **ROS–Gazebo bridge** — bidirectional topic bridges (odometry, joint states, LiDAR, cmd_vel, TF) for seamless sim-to-ROS communication
+Built the robot's low-level motion model around a differential-drive kinematic setup within MuJoCo's physics simulation, allowing realistic modeling of wheel dynamics, friction, and collision response — providing a more physically grounded testbed than purely kinematic simulators, and surfacing control challenges (wheel slip, momentum, turning radius constraints) that are typically hidden in idealized simulations.
 
-### Why Differential Drive?
-Supermarket aisles are narrow (1.5–2.5 m), so the robot needed to be maneuverable without the added complexity of mecanum or Ackermann steering. Differential drive gives zero-turn-radius maneuvering with just two motors and full support from ROS's *diff_drive_controller*.
+![LiDAR raycast simulation](/elements/website%20media/marketplace%20simulator/mujoco%20simulation.png)
 
-### Pipeline
-LiDAR scans and odometry feed SLAM Toolbox to build a 0.05 m/pixel occupancy grid map of the store. Once mapped, Nav2's AMCL localises the robot on that map, NavFn plans a global path to the target shelf, and DWB generates real-time velocity commands — with a collision monitor watching for customers stepping into the aisle.
+Implemented 2D LiDAR-based SLAM to construct and continuously update an occupancy map of the supermarket layout, allowing the robot to localize itself and build a persistent representation of aisles, shelving units, and open walkways as it moved through the environment. This map formed the foundation for both global navigation (moving between distant sections of the store) and local reactive avoidance of dynamic obstacles such as customers, carts, or staff.
 
-*This makes it ideal for real-time, obstacle-aware in-store navigation.*`,
-        tags: ['ROS 2', 'Gazebo', 'SLAM Toolbox', 'Nav2'],
-        src: '/elements/ai/ros.png',
-        link: 'https://github.com/ctxnn/Ros-AMR-Mobile-Robot/tree/fix-nav2-compatibility'
+Integrated the ROS2 Nav2 stack to handle global and local path planning on top of the SLAM-generated map — using Nav2's global planner to compute efficient routes to target product locations or store sections, and its local planner/costmap layers to handle real-time obstacle avoidance and smooth trajectory execution as conditions in the aisles changed dynamically.
+
+![Rviz Nav2 stack in action](/elements/website%20media/marketplace%20simulator/rviz%20nav2%20navigation.png)
+
+The full system was developed on ROS2 Humble, with Rviz used throughout development to visualize the SLAM map, planned global/local paths, and robot state during simulation runs, enabling rapid debugging and iteration before considering real-world deployment.
+
+**Tech stack:** ROS2 Humble, SLAM, Nav2, Rviz, MuJoCo, Differential-Drive Kinematics`,
+        tags: ['MuJoCo', 'ROS 2', 'Nav2', 'SLAM'],
+        src: '/elements/website media/marketplace simulator/robot model.png',
+        homeGallery: [
+            '/elements/website media/marketplace simulator/mujoco simulation.png',
+            '/elements/website media/marketplace simulator/rviz nav2 navigation.png',
+        ],
+    },
+    {
+        id: 30,
+        category: 'ai',
+        section: 'experience',
+        order: 1,
+        title: 'Robotics Intern @ IIT Mandi',
+        subtitle: 'Last-Mile Delivery Robot',
+        meta: 'CAIR Lab · May 2026 – July 2026',
+        hideLead: true,
+        shortDesc: "Designed and implemented an end-to-end autonomous navigation and perception pipeline for the Clearpath Husky A200, deployed on a Jetson AGX Orin for real-time inference using CUDA's parallel processing.",
+        bullets: [
+            "Integrated Autoware's perception and planning stack with NVIDIA TensorRT-optimized inference",
+            "Validated the driving stack in the AWSIM simulator before hardware trials",
+            "Built a GPS-based localization and tracking module that streams the robot's live position to a host website, densifying raw GPS waypoints into smooth, continuous trajectories for improved path navigation",
+        ],
+        description: `Designed and implemented an end-to-end autonomous navigation and perception pipeline for the Clearpath Husky A200 mobile robot, targeting real-world last-mile delivery scenarios. The system integrated Autoware's perception and planning stack with NVIDIA TensorRT-optimized inference, deployed and accelerated on a Jetson AGX Orin to enable real-time performance under onboard compute constraints, using CUDA for low-latency parallel processing of sensor data.
+
+![Husky A200 hardware](/elements/website%20media/iit%20mandi/husky.png)
+
+Built a GPS-based localization and tracking module that interfaced with a host website to stream and visualize the robot's live position, combined with a dense path-following controller that translated GPS waypoints into smooth, continuous trajectories rather than sparse point-to-point navigation — improving path adherence and reducing deviation in outdoor, unstructured environments.
+
+![GPS live-tracking map](/elements/website%20media/iit%20mandi/gps%20tracking%20pic.jpeg)
+
+To handle dynamic and static obstacles encountered during delivery runs, developed an obstacle avoidance algorithm that was tightly fused with the GPS path-tracking system, allowing the robot to dynamically replan or adjust its trajectory around obstacles while still converging back to the intended GPS path — directly addressing core challenges in the Last Mile Delivery Problem such as maintaining route efficiency while ensuring safe navigation through semi-structured, real-world terrain.
+
+![Rviz path-planning](/elements/website%20media/iit%20mandi/husky%20simulation.png)`,
+        tags: ['Autoware', 'Jetson AGX Orin', 'TensorRT', 'AWSIM'],
+        src: '/elements/website media/iit mandi/husky.png',
+        secondaryImage: '/elements/website media/iit mandi/gps tracking pic.jpeg',
+        homeGallery: [
+            '/elements/website media/iit mandi/scene seg trial.png',
+        ],
+        media: [
+            { type: 'image', src: '/elements/website media/iit mandi/scene seg trial.png', caption: 'Autoware segmentation output' },
+            { type: 'image', src: '/elements/website media/iit mandi/awsim simulation.png', caption: 'AWSIM simulation run' },
+            { type: 'video', src: '/elements/website media/iit mandi/gps tracking video.mp4', caption: 'GPS live-tracking' },
+            { type: 'image', src: '/elements/website media/iit mandi/iit mandi lab.png', caption: 'CAIR Lab, IIT Mandi' },
+            { type: 'image', src: '/elements/website media/iit mandi/my desk setup.png', caption: 'Workstation setup' },
+            { type: 'image', src: '/elements/website media/iit mandi/my picture in iit mandi.png', caption: 'On site at IIT Mandi' },
+        ],
+    },
+    {
+        id: 31,
+        category: 'ai',
+        section: 'experience',
+        order: 2,
+        title: 'Autonomous Exploration Bot',
+        meta: 'Robotics Lab, TIET · July 2026 – Present',
+        hideLead: true,
+        shortDesc: 'Architecting an autonomous exploration and SLAM pipeline using RRT-based algorithms, enabling the differential-drive Trossen Robotics LoCoBot WX250 (6DOF) to navigate unknown indoor workspaces.',
+        bullets: [
+            'Built real-time occupancy mapping using 2D LiDAR for large-scale spatial structure, fused with RGB-D depth camera data',
+            'Next step: implementing the TARE exploration method (Cao, Zhu, Choset & Zhang) to improve exploration efficiency',
+        ],
+        description: `Architected an autonomous exploration and SLAM pipeline enabling the Trossen Robotics LoCoBot WX250 6DOF to map and navigate entirely unknown indoor workspaces without any prior environmental knowledge, under the guidance of Dr. Raja Rout. The core exploration strategy was built around Rapidly-exploring Random Tree (RRT) based algorithms, which incrementally grew a tree of feasible paths into unmapped space, allowing the robot to efficiently identify and navigate toward unexplored regions rather than relying on exhaustive or purely reactive search. This RRT-based frontier selection formed the backbone of the active exploration behavior, continuously steering the robot toward the most informative unmapped areas while avoiding redundant revisits.
+
+![LoCoBot hardware](/elements/website%20media/robotics%20lab/locobot%20in%20lab%20pic.png)
+
+Used 2D LiDAR scan data as the primary source for real-time occupancy mapping, building and continuously updating a consistent map of the environment as the robot explored. The LiDAR-based map served as the geometric backbone for the SLAM pipeline, providing reliable, long-range structural information about walls, corridors, and open regions even in varying lighting conditions.
+
+![Occupancy map / Rviz output](/elements/website%20media/robotics%20lab/posssible%20paths%20in%20map.png)
+
+In parallel, integrated the RGB-D depth camera as the primary sensor for close-range navigation and obstacle avoidance — using dense depth data to detect obstacles directly in the robot's path, correct short-horizon trajectories, and safely navigate around dynamic or previously unmapped obstacles that the LiDAR's 2D scan plane might miss (e.g. low-lying or overhanging objects). This combination allowed the system to use LiDAR for large-scale spatial mapping while relying on the depth camera for fine-grained, real-time navigation decisions.
+
+![Point cloud visualization](/elements/website%20media/robotics%20lab/depth%20camera%20data.png)
+
+The full pipeline was implemented on ROS2 Galactic, built on top of the Nav2 stack for costmap management and local trajectory execution, with custom RRT-based exploration logic layered on top for frontier/goal selection in unmapped regions. Rviz was used extensively during development to visualize the growing RRT tree, the LiDAR-built occupancy map, and depth-camera-based obstacle detections in real time. Motion execution was grounded in classical control systems techniques to ensure smooth, stable trajectory tracking on the physical hardware.
+
+![LoCoBot CAD model](/elements/website%20media/robotics%20lab/locobot%20model.png)
+
+**Tech stack:** ROS, SLAM, RRT-based exploration, Rviz, Nav2, 2D LiDAR mapping, RGB-D depth-based navigation, Control Systems`,
+        tags: ['RRT', 'SLAM', 'LiDAR', 'RGB-D'],
+        src: '/elements/website media/robotics lab/locobot in lab pic.png',
+        secondaryImage: '/elements/website media/robotics lab/posssible paths in map.png',
+        homeGallery: [
+            '/elements/website media/robotics lab/depth camera data.png',
+        ],
+        media: [
+            { type: 'video', src: '/elements/website media/robotics lab/nav2 goal working on hardware.mp4', caption: 'Nav2 goal execution on hardware' },
+        ],
+    },
+    {
+        id: 32,
+        category: 'ai',
+        section: 'other',
+        order: 1,
+        title: 'LoCoBot Robotic Arm — Trajectory Planning & Optimization',
+        shortDesc: 'Trajectory planning and optimization work on the Trossen Robotics LoCoBot arm, including joint-angle and end-effector path analysis.',
+        media: [
+            { type: 'image', src: '/elements/website media/extra projects/robot arm simulation.png', caption: 'Arm simulation' },
+            { type: 'image', src: '/elements/website media/extra projects/robot arm trajectory tracking.png', caption: 'Trajectory tracking' },
+        ],
+    },
+    {
+        id: 33,
+        category: 'ai',
+        section: 'other',
+        order: 2,
+        title: 'Flowcraft',
+        shortDesc: 'A private, Miro-style board workspace built for documenting personal project work — supports unlimited boards in a single-user workspace.',
+        media: [
+            { type: 'image', src: '/elements/website media/extra projects/safesight boards page.png', caption: 'Boards workspace' },
+            { type: 'image', src: '/elements/website media/extra projects/safesight login.png', caption: 'Login page' },
+        ],
     },
     {
         id: 28,

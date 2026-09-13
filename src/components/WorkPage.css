@@ -1,3 +1,5 @@
 .work-page {
     padding-top: 100px;
+    --font-main: 'Poppins', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
 }

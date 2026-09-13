@@ -5,7 +5,6 @@
 /* ── Root ── */
 .pp-root {
     min-height: 100vh;
-    background: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-main);
     animation: pp-fade-in 0.45s ease both;
@@ -209,6 +208,22 @@
     margin: 0 0 1rem 0;
 }
 
+/* ── Experience subtitle / meta ── */
+.pp-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 0.4rem 0;
+}
+
+.pp-project-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin: 0 0 1.2rem 0;
+}
+
 /* ── Lead / subtitle ── */
 .pp-lead {
     font-size: 1.2rem;
@@ -285,6 +300,37 @@
     text-underline-offset: 4px;
 }
 
+/* ── Media gallery ── */
+.pp-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+}
+
+.pp-gallery-item {
+    margin: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pp-gallery-item img,
+.pp-gallery-item video {
+    width: 100%;
+    display: block;
+    max-height: 340px;
+    object-fit: cover;
+    background: #000;
+}
+
+.pp-gallery-item figcaption {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
 /* ── CTA ── */
 .pp-cta-row {
     margin-bottom: 3.5rem;
@@ -328,7 +374,6 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background: var(--bg-primary);
     color: var(--text-primary);
     text-align: center;
 }

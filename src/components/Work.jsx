@@ -1,45 +1,10 @@
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
 import './Work.css';
-import works from '../data/worksData';
-
-const FOLDER_COLORS = ['#ffffff', '#dbd9d8', '#bdbebd', '#909090', '#efec3b'];
+import ExperienceProjectsList from './ExperienceProjectsList';
 
 const Work = () => {
-    const navigate = useNavigate();
-    const cardRefs = useRef([]);
-
-    const filteredWorks = works
-        .filter(work => work.category === 'ai')
-        .sort((a, b) => a.id - b.id);
-
-    const handleWorkClick = (work) => {
-        navigate(`/project/${work.id}`);
-    };
-
-    useEffect(() => {
-        const cards = cardRefs.current.filter(Boolean);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-open');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { rootMargin: '-40% 0px -40% 0px' }
-        );
-
-        cards.forEach((card) => observer.observe(card));
-
-        return () => observer.disconnect();
-    }, [filteredWorks.length]);
-
     return (
         <section id="work" className="section work">
-            <h2 className="section-title"><span className="work-text">W</span>ork</h2>
+            <h2 className="section-title"><span className="work-text">E</span>XPERIENCE & <span className="work-text">P</span>ROJECTS</h2>
             <div className="container work-container">
                 <div className="work-journey animate-grid">
                     <div className="work-hero-image">
@@ -57,60 +22,7 @@ const Work = () => {
                     </div>
                 </div>
 
-                <div className="envelope-stack-home">
-                    {filteredWorks.length > 0 ? (
-                        filteredWorks.map((work, index) => (
-                            <div
-                                key={work.id}
-                                className="envelope-card-home"
-                                style={{
-                                    top: `${90 + index * 46}px`,
-                                    zIndex: index + 1,
-                                    '--folder-color': FOLDER_COLORS[index % FOLDER_COLORS.length]
-                                }}
-                                ref={(el) => { cardRefs.current[index] = el; }}
-                            >
-                                <div className="envelope-back-home" />
-                                <div
-                                    className="envelope-tab-shape-home"
-                                    onClick={() => handleWorkClick(work)}
-                                    role="button"
-                                    tabIndex={0}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter' || e.key === ' ') handleWorkClick(work);
-                                    }}
-                                    style={{ cursor: 'none' }}
-                                >
-                                    <span className="envelope-tab-shape-label-home">{work.title}</span>
-                                </div>
-
-                                <div className="envelope-front-home">
-                                    <div className="envelope-content-home">
-                                        <div className="envelope-content-inner-home">
-                                            <div className="envelope-image-home">
-                                                {work.src ? (
-                                                    <img src={encodeURI(work.src)} alt={work.title} loading="lazy" />
-                                                ) : (
-                                                    <div className="placeholder-work">
-                                                        <span>{work.title}</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="envelope-info-home">
-                                                <p>{work.shortDesc || work.description}</p>
-                                                <span className="envelope-cta-home" onClick={() => handleWorkClick(work)}>
-                                                    View Project →
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <p className="no-work-message">No projects found in this category yet.</p>
-                    )}
-                </div>
+                <ExperienceProjectsList />
             </div>
         </section>
     );
